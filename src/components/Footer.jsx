@@ -85,7 +85,7 @@ const Footer = () => {
                     <ul className="flex flex-col space-y-2">
                         <li>
                             <Link
-                                to="/basic-plan"
+                                to="order/basic"
                                 className="hover:text-lightGreen"
                             >
                                 Basic Plan
@@ -93,7 +93,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                to="/intermediate-plan"
+                                to="order/intermediate"
                                 className="hover:text-lightGreen"
                             >
                                 Intermediate Plan
@@ -101,7 +101,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link
-                                to="/advanced-plan"
+                                to="/order/advanced"
                                 className="hover:text-lightGreen"
                             >
                                 Advanced Plan

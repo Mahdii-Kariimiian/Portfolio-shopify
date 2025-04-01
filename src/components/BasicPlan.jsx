@@ -28,7 +28,7 @@ const BasicPlan = ({ isDarkMode }) => {
             </header>
 
             {/* Services Section */}
-            <div className="flex gap-10 items-start">
+            <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
                 <div>
                     <section className="mb-12">
                         <h2
@@ -186,7 +186,7 @@ const BasicPlan = ({ isDarkMode }) => {
                         </ul>
                     </section>
                 </div>
-                <img src={basic} alt="basic plan" className="max-w-[500px]" />
+                <img src={basic} alt="basic plan" className="max-w-[500px] w-full" />
             </div>
             <Link to="/order" className="flex items-center text-darkGreen">
                 <FaArrowLeft className="mr-2" /> Back

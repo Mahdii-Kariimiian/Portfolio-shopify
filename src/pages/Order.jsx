@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import PricingCard from "../components/PricingCard";
@@ -13,10 +13,10 @@ const Order = ({ isDarkMode }) => {
         isPhysical: "yes",
         needCustomDesign: "no",
         message: "",
-        dropshipping: "no", // جدید
-        multilingual: "no", // جدید
-        orderManagement: "no", // جدید
-        projectTime: "no-rush", // جدید
+        dropshipping: "no",
+        multilingual: "no",
+        orderManagement: "no",
+        projectTime: "no-rush",
     });
 
     const [submitted, setSubmitted] = useState(false);
@@ -63,6 +63,9 @@ const Order = ({ isDarkMode }) => {
                 }
             );
     };
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div>
@@ -71,7 +74,11 @@ const Order = ({ isDarkMode }) => {
             >
                 {pricingData.map((card) => {
                     return (
-                        <Link to={card.url} key={card.title}>
+                        <Link
+                            className="max-md:m-auto"
+                            to={card.url}
+                            key={card.title}
+                        >
                             <PricingCard
                                 isDarkMode={isDarkMode}
                                 title={card.title}

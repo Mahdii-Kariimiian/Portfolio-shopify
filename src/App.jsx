@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -10,7 +10,7 @@ import Projects from "./components/Projects";
 import Order from "./pages/Order";
 import BasicPlan from "./components/BasicPlan";
 import IntermediatePlan from "./components/IntermediatePlan";
-import AdvancedPlan from "./components/AdvancedPlan";
+import AdvancedPlan from "./components/advancedPlan";
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -25,10 +25,11 @@ function App() {
                 }
             >
                 <div className="relative flex flex-col min-h-screen">
-                    {/* Button for toggling dark mode */}
-
                     <div className="relative">
-                        <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+                        <Header
+                            isDarkMode={isDarkMode}
+                            setIsDarkMode={setIsDarkMode}
+                        />
                     </div>
 
                     <main className="flex-grow">
