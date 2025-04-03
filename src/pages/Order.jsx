@@ -63,6 +63,7 @@ const Order = ({ isDarkMode }) => {
                 }
             );
     };
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

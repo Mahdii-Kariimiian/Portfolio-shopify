@@ -1,9 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import basic from "../assets/basic.jpeg";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 const BasicPlan = ({ isDarkMode }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div
             className={`container mx-auto p-6 ${
@@ -31,6 +35,9 @@ const BasicPlan = ({ isDarkMode }) => {
             <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
                 <div>
                     <section className="mb-12">
+                        <p className="mb-6 text-3xl">
+                            Price: Up to <strong>€99</strong>{" "}
+                        </p>
                         <h2
                             className={`text-2xl font-semibold ${
                                 isDarkMode ? "text-gray-200" : "text-gray-800"
@@ -52,21 +59,22 @@ const BasicPlan = ({ isDarkMode }) => {
                             <li>
                                 <strong>
                                     Shopify Store Setup and Installation:
-                                </strong>
+                                </strong>{" "}
                                 Initial configuration of your Shopify store,
                                 including plan selection, general settings, and
                                 domain connection.
                             </li>
                             <li>
                                 <strong>Adding Initial Products:</strong>{" "}
-                                Incorporation of up to 50 products, complete
+                                Incorporation of{" "}
+                                <strong>up to 15 products</strong>, complete
                                 with images, detailed descriptions, and pricing
                                 information.
                             </li>
                             <li>
                                 <strong>
                                     Initial Payment and Shipping Settings:
-                                </strong>
+                                </strong>{" "}
                                 Configuration of payment gateways and shipping
                                 options to ensure smooth transactions and
                                 delivery processes.
@@ -79,47 +87,6 @@ const BasicPlan = ({ isDarkMode }) => {
                                 your store.
                             </li>
                         </ul>
-                    </section>
-                    {/* Sample Projects Section */}
-                    <section className="mb-12">
-                        <h2
-                            className={`text-2xl font-semibold ${
-                                isDarkMode ? "text-gray-200" : "text-gray-800"
-                            }`}
-                        >
-                            Sample Projects:
-                        </h2>
-                        <ul
-                            className={`list-disc pl-6 mt-4 ${
-                                isDarkMode ? "text-gray-300" : "text-gray-700"
-                            }`}
-                        >
-                            <li>
-                                <strong>Online Clothing Store:</strong>{" "}
-                                Developed a Shopify store for a local clothing
-                                brand, featuring a responsive design and
-                                user-friendly navigation.
-                            </li>
-                            <li>
-                                <strong>Beauty Products Shop:</strong> Set up an
-                                online store for a beauty product line,
-                                emphasizing high-quality images and detailed
-                                product descriptions.
-                            </li>
-                            <li>
-                                <strong>Home Appliances Retailer:</strong>{" "}
-                                Created a Shopify store for a home appliance
-                                retailer, incorporating customer reviews and
-                                product comparison features.
-                            </li>
-                        </ul>
-                        <p
-                            className={`mt-4 italic ${
-                                isDarkMode ? "text-gray-400" : "text-gray-600"
-                            }`}
-                        >
-                            More projects will be added soon!
-                        </p>
                     </section>
                     {/* Why Choose This Plan Section */}
                     <section className="mb-12">
@@ -171,7 +138,7 @@ const BasicPlan = ({ isDarkMode }) => {
                         >
                             <li>
                                 <strong>Product Limit:</strong> Ideal for stores
-                                with up to 50 products.
+                                with up to 15 products.
                             </li>
                             <li>
                                 <strong>Feature Limitations:</strong> Advanced
@@ -183,10 +150,18 @@ const BasicPlan = ({ isDarkMode }) => {
                                 support is available for a specified period;
                                 extended support may incur additional charges.
                             </li>
+                            <li>
+                                <strong>Review Limit:</strong> Includes up to 2
+                                revisions.
+                            </li>
                         </ul>
                     </section>
                 </div>
-                <img src={basic} alt="basic plan" className="max-w-[500px] w-full" />
+                <img
+                    src={basic}
+                    alt="basic plan"
+                    className="max-w-[500px] w-full"
+                />
             </div>
             <Link to="/order" className="flex items-center text-darkGreen">
                 <FaArrowLeft className="mr-2" /> Back

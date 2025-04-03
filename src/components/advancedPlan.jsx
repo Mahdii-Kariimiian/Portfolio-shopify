@@ -1,9 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import advanced from "../assets/advanced.jpeg";
 
 const AdvancedPlan = ({ isDarkMode }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div
             className={`container mx-auto p-6 ${
@@ -32,6 +36,9 @@ const AdvancedPlan = ({ isDarkMode }) => {
             <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
                 <div>
                     <section className="mb-12">
+                        <p className="mb-6 text-3xl">
+                            Price: Up to <strong>€199</strong>{" "}
+                        </p>
                         <h2
                             className={`text-2xl font-semibold ${
                                 isDarkMode ? "text-gray-200" : "text-gray-800"
@@ -52,9 +59,9 @@ const AdvancedPlan = ({ isDarkMode }) => {
                                 your specific business needs, from scratch.
                             </li>
                             <li>
-                                <strong>Adding More Than 100 Products:</strong>{" "}
-                                Adding a large number of products with full
-                                product descriptions, images, and other details.
+                                <strong>Product Listing:</strong> Adding a large
+                                number of products (up to 200) with full product
+                                descriptions, images, and other details.
                             </li>
                             <li>
                                 <strong>
@@ -154,7 +161,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
                                 <strong>Scalable Solution:</strong> This plan
                                 offers scalability, allowing your store to grow
                                 with your business by adding numerous products
-                                and custom functionality.
+                                (up to 200) and custom functionality.
                             </li>
                         </ul>
                     </section>
@@ -174,7 +181,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
                         >
                             <li>
                                 <strong>Product Limit:</strong> Ideal for stores
-                                with over 100 products.
+                                with over 200 products (up to 200).
                             </li>
                             <li>
                                 <strong>Custom Features:</strong> Custom design
@@ -191,7 +198,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
                 </div>
                 <img
                     src={advanced}
-                    alt="basic plan"
+                    alt="advanced plan"
                     className="max-w-[500px] w-full"
                 />
             </div>

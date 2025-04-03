@@ -1,9 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import intermediateImage from "../assets/intermediate.jpeg";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 const IntermediatePlan = ({ isDarkMode }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div
             className={`container mx-auto p-6 ${
@@ -22,8 +26,9 @@ const IntermediatePlan = ({ isDarkMode }) => {
                         isDarkMode ? "text-gray-300" : "text-gray-600"
                     }`}
                 >
-                    This plan is perfect for businesses that require more
-                    customization and advanced features for their online store.
+                    This plan is ideal for businesses that need a balance of
+                    customization and functionality to create a professional
+                    online store.
                 </p>
             </header>
 
@@ -31,6 +36,9 @@ const IntermediatePlan = ({ isDarkMode }) => {
             <div className="flex flex-col-reverse md:flex-row gap-10 items-start">
                 <div>
                     <section className="mb-12">
+                        <p className="mb-6 text-3xl">
+                            Price: Up to <strong>€159</strong>{" "}
+                        </p>
                         <h2
                             className={`text-2xl font-semibold ${
                                 isDarkMode ? "text-gray-200" : "text-gray-800"
@@ -48,77 +56,35 @@ const IntermediatePlan = ({ isDarkMode }) => {
                                     Custom Template Design or Editing Pre-made
                                     Templates:
                                 </strong>{" "}
-                                Customization of pre-designed templates or full
-                                custom design to match your brand's identity and
-                                business needs.
+                                Customization of pre-made templates to match
+                                your brand's identity or a simple custom design
+                                to meet your business goals.
                             </li>
                             <li>
-                                <strong>Adding 50 to 100 Products:</strong>{" "}
-                                Incorporation of up to 100 products, with
-                                images, detailed descriptions, and accurate
-                                pricing information.
+                                <strong> Product Listing:</strong>{" "}
+                                Incorporation of up to 50 products with images, descriptions, and accurate pricing
                             </li>
                             <li>
-                                <strong>Multi-language Support:</strong>{" "}
-                                Integration of multiple languages to cater to a
-                                global customer base, ensuring a personalized
-                                shopping experience.
+                                <strong>Multi-Currency Support:</strong>{" "}
+                                Integration of multiple currencies for global
+                                customer support.
                             </li>
                             <li>
-                                <strong>
-                                    Adding Product Pages and Additional Pages:
-                                </strong>{" "}
-                                Creation of custom product pages and additional
-                                pages (FAQs, Terms of Service, Privacy Policy,
-                                etc.)
+                                <strong>Custom Pages and Features:</strong>{" "}
+                                Creation of essential custom pages (About Us,
+                                Contact, Blog) and simple functionalities like
+                                product filters.
                             </li>
                             <li>
                                 <strong>
-                                    Installing Shopify Apps and Tools:
+                                    Integrating Shopify Apps for Enhanced
+                                    Functionality:
                                 </strong>{" "}
-                                Installation of essential Shopify apps and tools
-                                for better functionality (analytics, SEO,
-                                marketing tools, etc.).
+                                Installation of essential apps like SEO, email
+                                marketing, and reviews to enhance the store's
+                                performance.
                             </li>
                         </ul>
-                    </section>
-                    {/* Sample Projects Section */}
-                    <section className="mb-12">
-                        <h2
-                            className={`text-2xl font-semibold ${
-                                isDarkMode ? "text-gray-200" : "text-gray-800"
-                            }`}
-                        >
-                            Sample Projects:
-                        </h2>
-                        <ul
-                            className={`list-disc pl-6 mt-4 ${
-                                isDarkMode ? "text-gray-300" : "text-gray-700"
-                            }`}
-                        >
-                            <li>
-                                <strong>International Fashion Store:</strong>{" "}
-                                Custom Shopify store with multi-language support
-                                and product customization options.
-                            </li>
-                            <li>
-                                <strong>Tech Gadgets E-Commerce:</strong>{" "}
-                                Advanced product filtering, enhanced product
-                                pages, and multiple Shopify apps integration.
-                            </li>
-                            <li>
-                                <strong>Home Décor Brand:</strong> Highly
-                                customized Shopify store with custom product
-                                pages and detailed category navigation.
-                            </li>
-                        </ul>
-                        <p
-                            className={`mt-4 italic ${
-                                isDarkMode ? "text-gray-400" : "text-gray-600"
-                            }`}
-                        >
-                            More projects will be added soon!
-                        </p>
                     </section>
                     {/* Why Choose This Plan Section */}
                     <section className="mb-12">
@@ -135,21 +101,19 @@ const IntermediatePlan = ({ isDarkMode }) => {
                             }`}
                         >
                             <li>
-                                <strong>Advanced Customization:</strong> Ensures
-                                your store stands out and meets your unique
-                                business needs.
+                                <strong>Balanced Customization:</strong> Offers
+                                flexibility in design and features without going
+                                overboard on complexity.
                             </li>
                             <li>
-                                <strong>
-                                    Multi-language and Global Reach:
-                                </strong>{" "}
-                                Ideal for expanding internationally with
-                                localized shopping experiences.
+                                <strong>Global Reach:</strong> Multi-currency
+                                support helps you reach an international
+                                customer base.
                             </li>
                             <li>
-                                <strong>Enhanced Functionality:</strong>{" "}
-                                Additional tools and apps improve store
-                                performance and scalability.
+                                <strong>Enhanced Performance:</strong>{" "}
+                                Integration of key Shopify apps for better
+                                functionality and store growth.
                             </li>
                         </ul>
                     </section>
@@ -169,15 +133,16 @@ const IntermediatePlan = ({ isDarkMode }) => {
                         >
                             <li>
                                 <strong>Product Limit:</strong> Suitable for
-                                stores with 50 to 100 products.
+                                stores with up to 50 products.
                             </li>
                             <li>
-                                <strong>Feature Limitations:</strong> Highly
-                                customized features may have additional costs.
+                                <strong>Feature Limitations:</strong> Some
+                                advanced features may require additional
+                                charges.
                             </li>
                             <li>
                                 <strong>Extended Support:</strong> Post-launch
-                                support may incur additional charges.
+                                support is available with an additional charge.
                             </li>
                         </ul>
                     </section>
