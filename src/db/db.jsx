@@ -17,7 +17,7 @@ const pricingData = [
         description: [
             "Pre-made template design",
             "Shopify store setup and installation",
-            "Adding initial products (less than 50 products)",
+            "Adding initial products (up to 15 products)",
             "Initial payment and shipping settings",
             "Basic training for using the admin panel",
         ],
@@ -28,7 +28,7 @@ const pricingData = [
         price: "$149",
         description: [
             "Custom template design or editing pre-made templates",
-            "Adding 50 to 100 products",
+            "Adding up to 50 products",
             "Multi-language support",
             "Adding product pages and additional pages",
             "Installing Shopify apps and tools",
@@ -40,7 +40,7 @@ const pricingData = [
         price: "$199+",
         description: [
             "Fully custom design from scratch",
-            "Adding more than 100 products",
+            "Adding up to 200 products",
             "Customizing store pages and product pages",
             "Installing business-specific apps and tools",
             "Search Engine Optimization (SEO)",
