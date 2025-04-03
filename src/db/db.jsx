@@ -94,7 +94,7 @@ const projects = [
             ],
         },
         liveLink: "https://demartinicioccolato.myshopify.com/",
-        password: "demartiniciocolato",
+        password: "demartinicioccolato",
     },
 ];
 

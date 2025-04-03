@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,16 +22,25 @@ const Projects = ({ isDarkMode }) => {
         setTimeout(() => setPasswordCopied(false), 2000);
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <section className="container mx-auto py-10 md:px-10 px-4">
             <h2 className="text-3xl font-bold mb-6">Projects</h2>
+            <p className="md:max-w-[700px] mt-8 mb-14 leading-7 text-lg max-md:text-center">
+                This section highlights my expertise in building and designing
+                high-performance Shopify stores. Each project reflects my
+                commitment to delivering custom, user-friendly websites that are
+                visually appealing and optimized for top performance. Explore my
+                work and see how I can bring your vision to life.
+            </p>
 
             {/* Tabs */}
             <div
                 className={`flex space-x-4 p-2 rounded-lg ${
-                    isDarkMode
-                        ? "shadow-lg text-white"
-                        : "bg-gray-200 text-black"
+                    isDarkMode ? "shadow-lg text-white" : "text-black shadow-lg"
                 }`}
             >
                 {projects.map((project) => (
@@ -41,7 +50,7 @@ const Projects = ({ isDarkMode }) => {
                             selectedProject.id === project.id
                                 ? "bg-darkGreen text-white"
                                 : isDarkMode
-                                ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                                ? "text-gray-300 hover:bg-gray-700"
                                 : "bg-white text-gray-800 hover:bg-lightGreen"
                         }`}
                         onClick={() => setSelectedProject(project)}
@@ -52,7 +61,7 @@ const Projects = ({ isDarkMode }) => {
             </div>
 
             {/* Project Content */}
-            <div className={`my-10 grid md:grid-cols-2 gap-8 items-center`}>
+            <div className="mt-14 grid md:grid-cols-2 gap-8 items-start">
                 {/* Project Info */}
                 <div>
                     <h3 className="text-3xl font-bold">

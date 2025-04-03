@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 const Contact = ({ isDarkMode }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <section
             className={`w-full max-w-4xl mx-auto text-center p-8 ${
@@ -7,7 +13,7 @@ const Contact = ({ isDarkMode }) => {
                     : "bg-white text-gray-900"
             }`}
         >
-            <h1
+            {/* <h1
                 className={`text-4xl font-bold mb-4 ${
                     isDarkMode ? "text-gray-200" : "text-gray-900"
                 }`}
@@ -20,10 +26,22 @@ const Contact = ({ isDarkMode }) => {
                 }`}
             >
                 Have any questions or business inquiries? Fill out the form
-                below or reach me at <strong>mahdii.kariimiian@gmail.com</strong>
-            </p>
+                below or reach me at{" "}
+                <strong>mahdii.kariimiian@gmail.com</strong>
+            </p> */}
 
-            <form className="mt-6 flex flex-col space-y-4">
+            {/* Google Form Embed */}
+            <div className="mt-8 mx-auto max-w-4xl">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSd0hJR2Z680msaW9N2Ux96mX7SBCc0u3te-U5aAUUi46cqE4Q/viewform?embedded=true"
+                    width="100%"
+                    height="1000px"
+                >
+                    Loading…
+                </iframe>
+            </div>
+
+            {/* <form className="mt-6 flex flex-col space-y-4">
                 <input
                     type="text"
                     placeholder="Your Name"
@@ -57,7 +75,7 @@ const Contact = ({ isDarkMode }) => {
                 >
                     Send Message
                 </button>
-            </form>
+            </form> */}
         </section>
     );
 };

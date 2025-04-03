@@ -69,9 +69,7 @@ const Order = ({ isDarkMode }) => {
 
     return (
         <div>
-            <section
-                className={`flex max-md:flex-col gap-5 py-10 md:px-10 px-4 justify-center`}
-            >
+            <section className="grid max-md:grid-cols-1 max-lg:grid-cols-2 lg:grid-cols-3 items-stretch gap-5 py-10 md:px-10 px-4 justify-center">
                 {pricingData.map((card) => {
                     return (
                         <Link

@@ -25,7 +25,7 @@ const Footer = () => {
                         visitors into loyal customers.
                     </p>
                     <Link
-                        to="/contact"
+                        to="/order"
                         className="mt-6 inline-block bg-white text-black py-2 px-6 rounded-lg hover:bg-lightGreen transition"
                     >
                         Get a Free Consultation
@@ -37,25 +37,25 @@ const Footer = () => {
                     <h3 className="font-semibold mb-4">Quick Links</h3>
                     <ul className="space-y-2">
                         <li>
-                            <a href="#about" className="hover:text-lightGreen">
+                            <Link to="/about" className="hover:text-lightGreen">
                                 About me
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#projects"
+                            <Link
+                                to="/projects"
                                 className="hover:text-lightGreen"
                             >
                                 Projects
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#contact"
+                            <Link
+                                to="/contact"
                                 className="hover:text-lightGreen"
                             >
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -118,25 +118,25 @@ const Footer = () => {
                         href="https://www.facebook.com/share/1BbuP5ErwS/"
                         className="hover:text-lightGreen"
                     >
-                        <FaFacebook size={24} />
+                        <FaFacebook size={27} />
                     </a>
                     <a
                         href="https://www.instagram.com/mahdii.kariimiian?igsh=aHBvNHBmeTlxaGFx"
                         className="hover:text-lightGreen"
                     >
-                        <FaInstagram size={24} />
+                        <FaInstagram size={27} />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/mahdiikariimiian"
                         className="hover:text-lightGreen"
                     >
-                        <FaLinkedin size={24} />
+                        <FaLinkedin size={27} />
                     </a>
                     <a
                         href="https://github.com/Mahdii-Kariimiian"
                         className="hover:text-lightGreen"
                     >
-                        <FaGithub size={24} />
+                        <FaGithub size={27} />
                     </a>
                 </div>
             </div>

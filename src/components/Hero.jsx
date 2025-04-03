@@ -5,26 +5,25 @@ export default function HeroSection({ isDarkMode }) {
     console.log(isDarkMode);
     return (
         <section
-            className={`relative w-full min-h-min flex items-center justify-between max-md:flex-col max-md:justify-center py-10 md:px-10 px-4 md:mt-7 ${
+            className={`relative w-full min-h-min flex items-center justify-between max-lg:flex-col max-lg:justify-center py-10 lg:px-10 px-4 mt-7 ${
                 isDarkMode
                     ? "bg-darkerGreen text-white"
                     : "bg-white text-gray-800"
             }`}
         >
-            <div className="w-1/2 max-md:w-full max-md:text-center">
+            <div className="w-1/2 max-lg:w-full max-lg:text-center lg:my-20">
                 <h2 className="text-3xl mb-4">Shopify Developer</h2>
-                <h1 className="text-2xl md:text-5xl font-bold mb-6">
+                <h1 className="text-2xl lg:text-5xl font-bold mb-10">
                     Mahdi Karimian
                 </h1>
                 <div
-                    className={`text-lg max-md:text-md max-w-[600px] ${
+                    className={`text-lg max-lg:text-md lg:max-w-[700px] space-y-2 ${
                         isDarkMode ? "text-gray-300" : "text-gray-600"
                     }`}
                 >
                     <p>
-                        {" "}
-                        Need someone to set up your Shopify store fast and
-                        hassle-free?
+                        Need someone to set up your Shopify store quickly,
+                        smoothly, and professionally?
                     </p>
                     <p>
                         I design custom themes that look great, run smoothly,
@@ -40,11 +39,11 @@ export default function HeroSection({ isDarkMode }) {
                 </div>
             </div>
 
-            <div className="md:w-1/2 max-md:mt-20">
+            <div className="lg:w-1/2 max-lg:mt-20">
                 <img
                     src={hero}
                     alt="lap top image"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover max-w-xl"
                 />
             </div>
         </section>

@@ -29,7 +29,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             </Link>
 
             {/* Mobile Menu */}
-            <div className="md:hidden flex w-52 justify-end items-center">
+            <div className="md:hidden flex w-52 justify-end items-center z-20">
                 <button
                     onClick={toggleMenu}
                     className="text-3xl focus:outline-none"
@@ -49,12 +49,12 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                         {/* Dark Mode Toggle for Mobile */}
                         <button
                             onClick={toggleDarkMode}
-                            className="flex p-2 rounded-full bg-gray-200 hover:bg-lightGreen dark:hover:bg-lightGreen transition duration-200"
+                            className="flex p-2 rounded-full bg-gray-200 hover:bg-lightGreen transition duration-200"
                         >
                             {!isDarkMode ? (
-                                <FaMoon className="text-gray-900" />
+                                <FaMoon className="text-gray-800 text-xl" />
                             ) : (
-                                <FaSun className="text-yellow-500" />
+                                <FaSun className="text-gray-800 text-xl" />
                             )}
                         </button>
 
@@ -67,24 +67,24 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                     </div>
 
                     {/* Navigation Links */}
-                    <div className="flex flex-col justify-center items-center space-y-4">
+                    <div className="flex flex-col justify-center items-center space-y-6 py-10">
                         <Link
                             to="/projects"
-                            className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                            className="hover:text-lightGreen transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Projects
                         </Link>
                         <Link
                             to="/contact"
-                            className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                            className="hover:text-lightGreen transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Contact Me
                         </Link>
                         <Link
                             to="/about"
-                            className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                            className="hover:text-lightGreen transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             About Me
@@ -93,10 +93,13 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
 
                     {/* Shopify Page Button in Mobile */}
                     <Link
+                        onClick={() => setIsMenuOpen(false)}
                         to="/order"
                         className="flex mx-auto items-center space-x-2 px-10 pb-2 pt-1 bg-darkGreen hover:bg-lightGreen text-white rounded-full justify-center transition duration-200"
                     >
-                        <span>Free Consultation</span>
+                        <span className="whitespace-nowrap">
+                            Free Consultation
+                        </span>
                         <HiArrowNarrowRight />
                     </Link>
                 </div>
@@ -108,19 +111,19 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                 <div className="flex gap-8">
                     <Link
                         to="/about"
-                        className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                        className="hover:text-lightGreen transition duration-200"
                     >
                         About me
                     </Link>
                     <Link
                         to="/projects"
-                        className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                        className="hover:text-lightGreen transition duration-200"
                     >
                         Projects
                     </Link>
                     <Link
                         to="/contact"
-                        className="hover:text-gray-400 dark:hover:text-gray-400 transition duration-200"
+                        className="hover:text-lightGreen transition duration-200"
                     >
                         Contact me
                     </Link>
@@ -130,7 +133,7 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                 <div className="flex gap-5 items-center">
                     <button
                         onClick={toggleDarkMode}
-                        className="p-3 rounded-full bg-gray-200 hover:bg-lightGreen dark:hover:bg-lightGreen transition duration-200"
+                        className="p-3 rounded-full bg-gray-200 hover:bg-lightGreen transition duration-200"
                     >
                         {!isDarkMode ? (
                             <FaMoon className="text-gray-800" />
