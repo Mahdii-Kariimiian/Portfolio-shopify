@@ -181,7 +181,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
                         >
                             <li>
                                 <strong>Product Limit:</strong> Ideal for stores
-                                with over 200 products (up to 200).
+                                with over 200 products.
                             </li>
                             <li>
                                 <strong>Custom Features:</strong> Custom design
