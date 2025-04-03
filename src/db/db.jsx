@@ -13,7 +13,7 @@ const pricingData = [
     {
         title: "Basic Plan",
         url: "basic",
-        price: "$500 - $1000",
+        price: "$99",
         description: [
             "Pre-made template design",
             "Shopify store setup and installation",
@@ -25,7 +25,7 @@ const pricingData = [
     {
         title: "Intermediate Plan",
         url: "intermediate",
-        price: "$1000 - $3000",
+        price: "$149",
         description: [
             "Custom template design or editing pre-made templates",
             "Adding 50 to 100 products",
@@ -37,7 +37,7 @@ const pricingData = [
     {
         title: "Advanced Plan",
         url: "advanced",
-        price: "$3000 - $7000+",
+        price: "$199+",
         description: [
             "Fully custom design from scratch",
             "Adding more than 100 products",
