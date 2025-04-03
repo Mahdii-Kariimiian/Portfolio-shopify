@@ -37,7 +37,7 @@ const pricingData = [
     {
         title: "Advanced Plan",
         url: "advanced",
-        price: "$199+",
+        price: "$199",
         description: [
             "Fully custom design from scratch",
             "Adding up to 200 products",
