@@ -8,6 +8,11 @@ import demartiniDesktop3 from "../assets/screenshots/demartini-desktop3.png";
 import demartiniDesktop4 from "../assets/screenshots/demartini-desktop4.png";
 import demartiniMobile1 from "../assets/screenshots/demartini-mobile1.png";
 import demartiniMobile2 from "../assets/screenshots/demartini-mobile2.png";
+import aquiloneDesktop1 from "../assets/screenshots/aquiloneDesktop1.png";
+import aquiloneDesktop2 from "../assets/screenshots/aquiloneDesktop2.png";
+import aquiloneDesktop3 from "../assets/screenshots/aquiloneDesktop3.png";
+import aquiloneMobile1 from "../assets/screenshots/aquiloneMobile1.png";
+import aquiloneMobile2 from "../assets/screenshots/aquiloneMobile2.png";
 
 const pricingData = [
     {
@@ -87,14 +92,52 @@ const projects = [
         imagesType: {
             mobile: [demartiniMobile1, demartiniMobile2],
             desktop: [
+                demartiniDesktop3,
                 demartiniDesktop1,
                 demartiniDesktop2,
-                demartiniDesktop3,
                 demartiniDesktop4,
             ],
         },
         liveLink: "https://demartinicioccolato.myshopify.com/",
         password: "demartinicioccolato",
+    },
+    {
+        id: 3,
+        name: "l'Aquilone",
+        description:
+            "This website is for a well-established and reputable model car dealership in Turin with many years of experience. The site has basic features and is well-aligned with customer needs. It is currently in the preparation stages for launch for the store.",
+        bullet: [
+            "Simple and user-friendly design",
+            "High security for payments",
+            "Bilingual support for easier access",
+            "SEO optimization for better visibility on search engines",
+            "Ability to browse and select from different car models",
+        ],
+        imagesType: {
+            mobile: [aquiloneMobile1, aquiloneMobile2],
+            desktop: [aquiloneDesktop1, aquiloneDesktop2, aquiloneDesktop3],
+        },
+        liveLink: "https://casabellavibe.myshopify.com/",
+        password: "laquilone",
+    },
+    {
+        id: 3,
+        name: "l'Aquilone",
+        description:
+            "This website is for a well-established and reputable model car dealership in Turin with many years of experience. The site has basic features and is well-aligned with customer needs. It is currently in the preparation stages for launch for the store.",
+        bullet: [
+            "Simple and user-friendly design",
+            "High security for payments",
+            "Bilingual support for easier access",
+            "SEO optimization for better visibility on search engines",
+            "Ability to browse and select from different car models",
+        ],
+        imagesType: {
+            mobile: [aquiloneMobile1, aquiloneMobile2],
+            desktop: [aquiloneDesktop1, aquiloneDesktop2, aquiloneDesktop3],
+        },
+        liveLink: "https://casabellavibe.myshopify.com/",
+        password: "laquilone",
     },
 ];
 
