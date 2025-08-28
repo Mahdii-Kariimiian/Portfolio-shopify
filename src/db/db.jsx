@@ -60,6 +60,25 @@ const pricingData = [
 
 const projects = [
     {
+        id: 1,
+        name: "Mister Spare Parts",
+        description:
+            "This website was designed for a well-established and reputable company in the automotive spare parts industry and is currently active. The online store features over 250,000 products, and the design incorporates extensive customizations in the advanced search and product pages according to the client’s requirements. The site effectively showcases my skills in custom design, template development, and working with Liquid.",
+        bullet: [
+    "Custom design tailored to client needs",
+    "Over 20 meta fields added to display detailed product information",
+    "Advanced search section allowing users to find spare parts by car brand and model",
+    "Optimized product pages for fast loading and smooth navigation",
+    "Responsive design ensuring seamless experience across all devices",
+],
+        imagesType: {
+            mobile: [misterMobile1],
+            desktop: [misterDesktop1, misterDesktop2, misterDesktop3 , misterDesktop4],
+        },
+        liveLink: "https://misterspareparts.com",
+        password: "No Password needed",
+    },
+    {
         id: 3,
         name: "Velvet Pour",
         description:
@@ -125,25 +144,7 @@ const projects = [
         liveLink: "https://casabellavibe.myshopify.com/",
         password: "laquilone",
     },
-    {
-        id: 1,
-        name: "Mister Spare Parts",
-        description:
-            "This website was designed for a well-established and reputable company in the automotive spare parts industry and is currently active. The online store features over 250,000 products, and the design incorporates extensive customizations in the advanced search and product pages according to the client’s requirements. The site effectively showcases my skills in custom design, template development, and working with Liquid.",
-        bullet: [
-    "Custom design tailored to client needs",
-    "Over 20 meta fields added to display detailed product information",
-    "Advanced search section allowing users to find spare parts by car brand and model",
-    "Optimized product pages for fast loading and smooth navigation",
-    "Responsive design ensuring seamless experience across all devices",
-],
-        imagesType: {
-            mobile: [misterMobile1],
-            desktop: [misterDesktop1, misterDesktop2, misterDesktop3 , misterDesktop4],
-        },
-        liveLink: "https://misterspareparts.com",
-        password: "No Password needed",
-    },
+    
 ];
 
 export { projects, pricingData };
