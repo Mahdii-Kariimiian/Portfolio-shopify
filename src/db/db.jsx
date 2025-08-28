@@ -73,7 +73,7 @@ const projects = [
 ],
         imagesType: {
             mobile: [misterMobile1],
-            desktop: [misterDesktop1, misterDesktop2, misterDesktop3 , misterDesktop4],
+            desktop: [ misterDesktop2,misterDesktop1, misterDesktop3 , misterDesktop4],
         },
         liveLink: "https://misterspareparts.com",
         password: "No Password needed",
