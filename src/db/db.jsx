@@ -13,6 +13,11 @@ import aquiloneDesktop2 from "../assets/screenshots/aquiloneDesktop2.png";
 import aquiloneDesktop3 from "../assets/screenshots/aquiloneDesktop3.png";
 import aquiloneMobile1 from "../assets/screenshots/aquiloneMobile1.png";
 import aquiloneMobile2 from "../assets/screenshots/aquiloneMobile2.png";
+import misterDesktop1 from "../assets/screenshots/misterspareparts-screenshot-desktop-1.png"
+import misterDesktop2 from "../assets/screenshots/misterspareparts-screenshot-desktop-2.png"
+import misterDesktop3 from "../assets/screenshots/misterspareparts-screenshot-desktop-3.png"
+import misterDesktop4 from "../assets/screenshots/misterspareparts-screenshot-desktop-4.png"
+import misterMobile1 from "../assets/screenshots/misterspareparts-screenshot-mobile-1.png"
 
 const pricingData = [
     {
@@ -55,7 +60,7 @@ const pricingData = [
 
 const projects = [
     {
-        id: 1,
+        id: 3,
         name: "Velvet Pour",
         description:
             "A Shopify-powered online store for alcoholic beverages. The site features custom sections like cocktail introductions, and products are scraped for easy entry. The store allows purchases from anywhere in the world. It's bilingual, supporting both English and Italian. There are also multiple collections such as cocktails, Gins, Whiskeys and Special packages. Customers can filter products based on type, price, and other customizable filters. The store uses popular Shopify apps for seamless functionality, including:",
@@ -69,8 +74,8 @@ const projects = [
             "Multi-language Support: The store is bilingual, offering both Italian and English language options for a wider audience.",
         ],
         imagesType: {
-            mobile: [velvetScreenshot1], // Insert relevant mobile screenshot here
-            desktop: [velvetScreenshot2, velvetScreenshot3, velvetScreenshot4], // Insert relevant desktop screenshots here
+            mobile: [velvetScreenshot1], 
+            desktop: [velvetScreenshot2, velvetScreenshot3, velvetScreenshot4], 
         },
         liveLink: "https://velvet-pour.myshopify.com/",
         password: "velvetmitoni1",
@@ -102,7 +107,7 @@ const projects = [
         password: "demartinicioccolato",
     },
     {
-        id: 3,
+        id: 4,
         name: "l'Aquilone",
         description:
             "This website is for a well-established and reputable model car dealership in Turin with many years of experience. The site has basic features and is well-aligned with customer needs. It is currently in the preparation stages for launch for the store.",
@@ -121,23 +126,23 @@ const projects = [
         password: "laquilone",
     },
     {
-        id: 3,
-        name: "l'Aquilone",
+        id: 1,
+        name: "Mister Spare Parts",
         description:
-            "This website is for a well-established and reputable model car dealership in Turin with many years of experience. The site has basic features and is well-aligned with customer needs. It is currently in the preparation stages for launch for the store.",
+            "This website was designed for a well-established and reputable company in the automotive spare parts industry and is currently active. The online store features over 250,000 products, and the design incorporates extensive customizations in the advanced search and product pages according to the client’s requirements. The site effectively showcases my skills in custom design, template development, and working with Liquid.",
         bullet: [
-            "Simple and user-friendly design",
-            "High security for payments",
-            "Bilingual support for easier access",
-            "SEO optimization for better visibility on search engines",
-            "Ability to browse and select from different car models",
-        ],
+    "Custom design tailored to client needs",
+    "Over 20 meta fields added to display detailed product information",
+    "Advanced search section allowing users to find spare parts by car brand and model",
+    "Optimized product pages for fast loading and smooth navigation",
+    "Responsive design ensuring seamless experience across all devices",
+],
         imagesType: {
-            mobile: [aquiloneMobile1, aquiloneMobile2],
-            desktop: [aquiloneDesktop1, aquiloneDesktop2, aquiloneDesktop3],
+            mobile: [misterMobile1],
+            desktop: [misterDesktop1, misterDesktop2, misterDesktop3 , misterDesktop4],
         },
-        liveLink: "https://casabellavibe.myshopify.com/",
-        password: "laquilone",
+        liveLink: "https://misterspareparts.com",
+        password: "No Password needed",
     },
 ];
 
