@@ -36,7 +36,7 @@ const BasicPlan = ({ isDarkMode }) => {
                 <div>
                     <section className="mb-12">
                         <p className="mb-6 text-3xl">
-                            Price: Up to <strong>€99</strong>{" "}
+                            Price: Up to <strong>€499</strong>{" "}
                         </p>
                         <h2
                             className={`text-2xl font-semibold ${

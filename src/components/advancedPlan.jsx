@@ -37,7 +37,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
                 <div>
                     <section className="mb-12">
                         <p className="mb-6 text-3xl">
-                            Price: Up to <strong>€199</strong>{" "}
+                            Price: <strong>Upon Agreement</strong>{" "}
                         </p>
                         <h2
                             className={`text-2xl font-semibold ${
