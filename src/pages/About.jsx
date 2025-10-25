@@ -1,7 +1,7 @@
 // import aboutMe from "../assets/about-me.png";
 import { useEffect } from "react";
 import image from "../assets/webdevelopment-about.png";
-import visitCard from "../assets/mahdi-karimian.png";
+import visitCard from "../assets/Mahdi-Karimian.png";
 
 const About = ({ isDarkMode }) => {
     useEffect(() => {
