@@ -1,0 +1,128 @@
+{
+  "header": {
+    "logo": "MK",
+    "about": "About",
+    "projects": "Projects", 
+    "contact": "Contact",
+    "freeAudit": "Get Free Audit"
+  },
+  "hero": {
+    "headline": "Shopify Stores That Convert Visitors into Customers",
+    "subheadline": "I build high-performance Shopify stores designed to increase sales, not just look good. Specializing in conversion optimization that delivers measurable business results.",
+    "primaryCTA": "Get Free Audit",
+    "secondaryCTA": "View Case Studies"
+  },
+  "results": {
+    "title": "Results That Speak for Themselves",
+    "subtitle": "Real metrics from real stores I've built and optimized",
+    "metrics": [
+      {
+        "value": "+25%",
+        "label": "Average Conversion Rate Increase"
+      },
+      {
+        "value": "40%",
+        "label": "Faster Load Times"
+      },
+      {
+        "value": "3.2x",
+        "label": "Return on Investment"
+      },
+      {
+        "value": "98%",
+        "label": "Client Satisfaction"
+      }
+    ]
+  },
+  "services": {
+    "title": "Services That Drive Growth",
+    "subtitle": "End-to-end Shopify solutions focused on one thing: increasing your revenue",
+    "items": [
+      {
+        "title": "Shopify Store Development",
+        "description": "Custom-built stores optimized for conversions from day one. No templates, just strategic design that sells.",
+        "outcome": "Launch a store that converts visitors into buyers"
+      },
+      {
+        "title": "CRO Optimization", 
+        "description": "Data-driven conversion rate optimization using A/B testing, heatmaps, and user behavior analysis.",
+        "outcome": "Turn more visitors into paying customers"
+      },
+      {
+        "title": "Speed Optimization",
+        "description": "Lightning-fast store performance that keeps visitors engaged and improves search rankings.",
+        "outcome": "Higher conversions and better SEO rankings"
+      },
+      {
+        "title": "Email Marketing Setup",
+        "description": "Complete Klaviyo automation setup including welcome flows, abandoned cart recovery, and segmentation.",
+        "outcome": "Automated revenue generation 24/7"
+      }
+    ]
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "How I've helped businesses like yours achieve measurable growth",
+    "studies": [
+      {
+        "name": "Velvet Pour",
+        "problem": "Struggling with 1.2% conversion rate and slow loading times affecting user experience.",
+        "solution": "Complete store redesign with optimized product pages, improved checkout flow, and performance enhancements.",
+        "result": "Increased conversion rate to 2.8% and reduced page load time by 45%."
+      },
+      {
+        "name": "De Martini",
+        "problem": "Mobile traffic converting poorly due to non-responsive design and complicated navigation.",
+        "solution": "Mobile-first redesign with simplified user journey and touch-optimized interface.",
+        "result": "Mobile conversions increased by 65% and overall conversion rate improved by 22%."
+      },
+      {
+        "name": "Mister Spare Parts",
+        "problem": "Low average order value and high cart abandonment rate.",
+        "solution": "Implemented product bundling, one-click checkout, and abandoned cart email sequences.",
+        "result": "Average order value increased by 35% and cart abandonment reduced by 28%."
+      }
+    ]
+  },
+  "process": {
+    "title": "My Process",
+    "subtitle": "A systematic approach to building stores that scale",
+    "steps": [
+      {
+        "phase": "Build",
+        "description": "Strategic foundation with conversion-focused design and technical excellence."
+      },
+      {
+        "phase": "Optimize", 
+        "description": "Continuous improvement through data analysis and A/B testing."
+      },
+      {
+        "phase": "Scale",
+        "description": "Growth strategies including SEO, email marketing, and performance marketing."
+      }
+    ]
+  },
+  "trust": {
+    "title": "Trusted by Growing Brands",
+    "subtitle": "Results that have helped businesses scale to 6-figures and beyond",
+    "testimonials": [
+      {
+        "content": "Mahdi transformed our struggling store into a conversion machine. Our revenue doubled in 3 months.",
+        "author": "Sarah Chen",
+        "role": "Founder, Velvet Pour"
+      },
+      {
+        "content": "The attention to detail and focus on conversions is unmatched. Best investment we've made.",
+        "author": "Marco Rossi", 
+        "role": "CEO, De Martini"
+      }
+    ]
+  },
+  "finalCTA": {
+    "title": "Ready to Increase Your Sales?",
+    "subtitle": "Get a free 5-minute audit of your Shopify store with actionable recommendations",
+    "placeholder": "Enter your store URL...",
+    "button": "Get Free Audit",
+    "note": "No obligation. Real insights in 5 minutes or less."
+  }
+}

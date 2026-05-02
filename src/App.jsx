@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -16,66 +17,68 @@ function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     return (
-        <Router>
-            <div
-                className={
-                    isDarkMode
-                        ? "bg-darkerGreen text-white"
-                        : "bg-white text-gray-800"
-                }
-            >
-                <div className="relative flex flex-col min-h-screen">
-                    <div className="relative">
-                        <Header
-                            isDarkMode={isDarkMode}
-                            setIsDarkMode={setIsDarkMode}
-                        />
-                    </div>
+        <LanguageProvider>
+            <Router>
+                <div
+                    className={
+                        isDarkMode
+                            ? "bg-gray-900 text-white"
+                            : "bg-white text-gray-900"
+                    }
+                >
+                    <div className="relative flex flex-col min-h-screen">
+                        <div className="relative">
+                            <Header
+                                isDarkMode={isDarkMode}
+                                setIsDarkMode={setIsDarkMode}
+                            />
+                        </div>
 
-                    <main className="flex-grow">
-                        <Routes>
-                            <Route
-                                path="/"
-                                element={<Home isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/projects"
-                                element={<Projects isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/about"
-                                element={<About isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/contact"
-                                element={<Contact isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/order"
-                                element={<Order isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/order/basic"
-                                element={<BasicPlan isDarkMode={isDarkMode} />}
-                            />
-                            <Route
-                                path="/order/intermediate"
-                                element={
-                                    <IntermediatePlan isDarkMode={isDarkMode} />
-                                }
-                            />
-                            <Route
-                                path="/order/advanced"
-                                element={
-                                    <AdvancedPlan isDarkMode={isDarkMode} />
-                                }
-                            />
-                        </Routes>
-                    </main>
-                    <Footer isDarkMode={isDarkMode} />
+                        <main className="flex-grow">
+                            <Routes>
+                                <Route
+                                    path="/"
+                                    element={<Home isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/projects"
+                                    element={<Projects isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/about"
+                                    element={<About isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/contact"
+                                    element={<Contact isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/order"
+                                    element={<Order isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/order/basic"
+                                    element={<BasicPlan isDarkMode={isDarkMode} />}
+                                />
+                                <Route
+                                    path="/order/intermediate"
+                                    element={
+                                        <IntermediatePlan isDarkMode={isDarkMode} />
+                                    }
+                                />
+                                <Route
+                                    path="/order/advanced"
+                                    element={
+                                        <AdvancedPlan isDarkMode={isDarkMode} />
+                                    }
+                                />
+                            </Routes>
+                        </main>
+                        <Footer isDarkMode={isDarkMode} />
+                    </div>
                 </div>
-            </div>
-        </Router>
+            </Router>
+        </LanguageProvider>
     );
 }
 

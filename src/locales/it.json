@@ -1,0 +1,128 @@
+{
+  "header": {
+    "logo": "MK",
+    "about": "Chi Sono",
+    "projects": "Progetti", 
+    "contact": "Contatto",
+    "freeAudit": "Audit Gratuito"
+  },
+  "hero": {
+    "headline": "Shopify Store Che Convertono Visitatori in Clienti",
+    "subheadline": "Creo store Shopify ad alte prestazioni progettati per aumentare le vendite, non solo per apparire belli. Specializzato in ottimizzazione del tasso di conversione che fornisce risultati aziendali misurabili.",
+    "primaryCTA": "Audit Gratuito",
+    "secondaryCTA": "Vedi Case Studies"
+  },
+  "results": {
+    "title": "Risultati Che Parlano da Soli",
+    "subtitle": "Metriche reali da store reali che ho costruito e ottimizzato",
+    "metrics": [
+      {
+        "value": "+25%",
+        "label": "Aumento Medio del Tasso di Conversione"
+      },
+      {
+        "value": "40%",
+        "label": "Tempi di Caricamento Più Veloci"
+      },
+      {
+        "value": "3.2x",
+        "label": "Ritorno sull'Investimento"
+      },
+      {
+        "value": "98%",
+        "label": "Soddisfazione dei Clienti"
+      }
+    ]
+  },
+  "services": {
+    "title": "Servizi Che Guidano la Crescita",
+    "subtitle": "Soluzioni Shopify complete focalizzate su una cosa: aumentare i tuoi ricavi",
+    "items": [
+      {
+        "title": "Sviluppo Store Shopify",
+        "description": "Store personalizzati ottimizzati per le conversioni dal primo giorno. Nessun template, solo design strategico che vende.",
+        "outcome": "Lancia uno store che converte i visitatori in acquirenti"
+      },
+      {
+        "title": "Ottimizzazione CRO", 
+        "description": "Ottimizzazione del tasso di conversione basata sui dati utilizzando test A/B, heatmap e analisi del comportamento utente.",
+        "outcome": "Converte più visitatori in clienti paganti"
+      },
+      {
+        "title": "Ottimizzazione Velocità",
+        "description": "Prestazioni dello store fulminee che mantengono i visitatori coinvolti e migliorano i posizionamenti di ricerca.",
+        "outcome": "Conversioni più elevate e migliori posizioni SEO"
+      },
+      {
+        "title": "Setup Email Marketing",
+        "description": "Configurazione completa dell'automazione Klaviyo inclusi flussi di benvenuto, recupero carrelli abbandonati e segmentazione.",
+        "outcome": "Generazione di ricavi automatizzata 24/7"
+      }
+    ]
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Come ho aiutato aziende come la tua a raggiungere una crescita misurabile",
+    "studies": [
+      {
+        "name": "Velvet Pour",
+        "problem": "Problemi con tasso di conversione dell'1.2% e tempi di caricamento lenti che influenzano l'esperienza utente.",
+        "solution": "Redesign completo dello store con pagine prodotto ottimizzate, flusso di checkout migliorato e miglioramenti delle prestazioni.",
+        "result": "Tasso di conversione aumentato al 2.8% e tempo di caricamento pagina ridotto del 45%."
+      },
+      {
+        "name": "De Martini",
+        "problem": "Traffico mobile con conversioni scarse a causa di design non responsive e navigazione complicata.",
+        "solution": "Redesign mobile-first con percorso utente semplificato e interfaccia ottimizzata per il tocco.",
+        "result": "Conversioni mobile aumentate del 65% e tasso di conversione generale migliorato del 22%."
+      },
+      {
+        "name": "Mister Spare Parts",
+        "problem": "Basso valore medio ordine e alto tasso di abbandono carrello.",
+        "solution": "Implementato bundling prodotti, checkout one-click e sequenze email per carrelli abbandonati.",
+        "result": "Valore medio ordine aumentato del 35% e abbandono carrello ridotto del 28%."
+      }
+    ]
+  },
+  "process": {
+    "title": "Il Mio Processo",
+    "subtitle": "Un approccio sistematico per costruire store che scalano",
+    "steps": [
+      {
+        "phase": "Costruisci",
+        "description": "Fondazione strategica con design focalizzato sulle conversioni ed eccellenza tecnica."
+      },
+      {
+        "phase": "Ottimizza", 
+        "description": "Miglioramento continuo attraverso analisi dei dati e test A/B."
+      },
+      {
+        "phase": "Scala",
+        "description": "Strategie di crescita inclusi SEO, email marketing e performance marketing."
+      }
+    ]
+  },
+  "trust": {
+    "title": "Affidato da Marchi in Crescita",
+    "subtitle": "Risultati che hanno aiutato le aziende a scalare a 6 cifre e oltre",
+    "testimonials": [
+      {
+        "content": "Mahdi ha trasformato il nostro store in difficoltà in una macchina di conversione. I nostri ricavi sono raddoppiati in 3 mesi.",
+        "author": "Sarah Chen",
+        "role": "Fondatrice, Velvet Pour"
+      },
+      {
+        "content": "L'attenzione ai dettagli e il focus sulle conversioni è ineguagliabile. Miglior investimento che abbiamo fatto.",
+        "author": "Marco Rossi", 
+        "role": "CEO, De Martini"
+      }
+    ]
+  },
+  "finalCTA": {
+    "title": "Pronto ad Aumentare le Tue Vendite?",
+    "subtitle": "Ottieni un audit gratuito di 5 minuti del tuo store Shopify con raccomandazioni attuabili",
+    "placeholder": "Inserisci l'URL del tuo store...",
+    "button": "Audit Gratuito",
+    "note": "Nessun obbligo. Insight reali in 5 minuti o meno."
+  }
+}

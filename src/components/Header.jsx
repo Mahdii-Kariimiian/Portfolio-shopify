@@ -1,11 +1,12 @@
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaGlobe } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from "../assets/my-logo.png/";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Header = ({ isDarkMode, setIsDarkMode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { language, changeLanguage, t } = useLanguage();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -14,6 +15,12 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
     };
+
+    const languages = [
+        { code: 'en', name: 'EN' },
+        { code: 'it', name: 'IT' },
+        { code: 'fa', name: 'فا' }
+    ];
 
     return (
         <header
@@ -24,8 +31,13 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             }`}
         >
             {/* Logo */}
-            <Link to="/">
-                <img className="w-40 max-md:w-28" src={logo} alt="logo" />
+            <Link to="/" className="flex items-center space-x-2">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                    isDarkMode ? "bg-green-600 text-white" : "bg-green-600 text-white"
+                }`}>
+                    {t('header.logo')}
+                </div>
+                <span className="text-xl font-bold">Mahdi Karimian</span>
             </Link>
 
             {/* Mobile Menu */}
@@ -70,35 +82,54 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                     <div className="flex flex-col justify-center items-center space-y-6 py-10">
                         <Link
                             to="/projects"
-                            className="hover:text-lightGreen transition duration-200"
+                            className="hover:text-green-400 transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Projects
+                            {t('header.projects')}
                         </Link>
                         <Link
                             to="/contact"
-                            className="hover:text-lightGreen transition duration-200"
+                            className="hover:text-green-400 transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Contact Me
+                            {t('header.contact')}
                         </Link>
                         <Link
                             to="/about"
-                            className="hover:text-lightGreen transition duration-200"
+                            className="hover:text-green-400 transition duration-200"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            About Me
+                            {t('header.about')}
                         </Link>
+                        
+                        {/* Language Switcher Mobile */}
+                        <div className="flex space-x-2">
+                            {languages.map((lang) => (
+                                <button
+                                    key={lang.code}
+                                    onClick={() => changeLanguage(lang.code)}
+                                    className={`px-3 py-1 rounded-lg transition duration-200 ${
+                                        language === lang.code
+                                            ? "bg-green-600 text-white"
+                                            : isDarkMode
+                                            ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                    }`}
+                                >
+                                    {lang.name}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Shopify Page Button in Mobile */}
                     <Link
                         onClick={() => setIsMenuOpen(false)}
                         to="/order"
-                        className="flex mx-auto items-center space-x-2 px-10 pb-2 pt-1 bg-darkGreen hover:bg-lightGreen text-white rounded-full justify-center transition duration-200"
+                        className="flex mx-auto items-center space-x-2 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full justify-center transition duration-200"
                     >
                         <span className="whitespace-nowrap">
-                            Free Consultation
+                            {t('header.freeAudit')}
                         </span>
                         <HiArrowNarrowRight />
                     </Link>
@@ -108,46 +139,72 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8 w-full justify-between">
                 {/* Navigation Links for Desktop */}
-                <div className="flex gap-8">
+                <div className="flex gap-8 items-center">
                     <Link
                         to="/about"
-                        className="hover:text-lightGreen transition duration-200"
+                        className="hover:text-green-400 transition duration-200"
                     >
-                        About me
+                        {t('header.about')}
                     </Link>
                     <Link
                         to="/projects"
-                        className="hover:text-lightGreen transition duration-200"
+                        className="hover:text-green-400 transition duration-200"
                     >
-                        Projects
+                        {t('header.projects')}
                     </Link>
                     <Link
                         to="/contact"
-                        className="hover:text-lightGreen transition duration-200"
+                        className="hover:text-green-400 transition duration-200"
                     >
-                        Contact me
+                        {t('header.contact')}
                     </Link>
+                    
+                    {/* Language Switcher Desktop */}
+                    <div className="flex items-center space-x-1">
+                        <FaGlobe className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`} />
+                        <div className="flex space-x-1">
+                            {languages.map((lang) => (
+                                <button
+                                    key={lang.code}
+                                    onClick={() => changeLanguage(lang.code)}
+                                    className={`px-2 py-1 text-sm rounded-lg transition duration-200 ${
+                                        language === lang.code
+                                            ? "bg-green-600 text-white"
+                                            : isDarkMode
+                                            ? "text-gray-400 hover:text-white hover:bg-gray-700"
+                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                                    }`}
+                                >
+                                    {lang.name}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
                 {/* Dark Mode Toggle and Order Button */}
-                <div className="flex gap-5 items-center">
+                <div className="flex gap-4 items-center">
                     <button
                         onClick={toggleDarkMode}
-                        className="p-3 rounded-full bg-gray-200 hover:bg-lightGreen transition duration-200"
+                        className={`p-3 rounded-full transition duration-200 ${
+                            isDarkMode
+                                ? "bg-gray-700 hover:bg-gray-600 text-yellow-400"
+                                : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                        }`}
                     >
                         {!isDarkMode ? (
-                            <FaMoon className="text-gray-800" />
+                            <FaMoon />
                         ) : (
-                            <FaSun className="text-gray-800" />
+                            <FaSun />
                         )}
                     </button>
 
                     {/* Shopify Page Button for Desktop */}
                     <Link
                         to="/order"
-                        className="flex items-center space-x-2 px-8 py-2 bg-darkGreen hover:bg-lightGreen text-white rounded-full justify-center transition duration-200"
+                        className="flex items-center space-x-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full justify-center transition duration-200"
                     >
-                        <span>Free Consultation</span>
+                        <span>{t('header.freeAudit')}</span>
                         <HiArrowNarrowRight />
                     </Link>
                 </div>

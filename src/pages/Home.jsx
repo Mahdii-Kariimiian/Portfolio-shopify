@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import Results from "../components/Results";
+import Services from "../components/Services";
+import CaseStudies from "../components/CaseStudies";
+import Process from "../components/Process";
+import Trust from "../components/Trust";
+import FinalCTA from "../components/FinalCTA";
 
 const Home = ({ isDarkMode }) => {
     useEffect(() => {
@@ -9,7 +14,12 @@ const Home = ({ isDarkMode }) => {
     return (
         <div>
             <Hero isDarkMode={isDarkMode} />
-            <Projects isDarkMode={isDarkMode} />
+            <Results isDarkMode={isDarkMode} />
+            <Services isDarkMode={isDarkMode} />
+            <CaseStudies isDarkMode={isDarkMode} />
+            <Process isDarkMode={isDarkMode} />
+            <Trust isDarkMode={isDarkMode} />
+            <FinalCTA isDarkMode={isDarkMode} />
         </div>
     );
 };
