@@ -7,26 +7,36 @@ import {
     FaLinkedin,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ isDarkMode }) => {
     return (
-        <footer className="w-full text-white py-10 md:px-10 px-4 mt-12 bg-darkGreen">
+        <footer className={`w-full py-10 md:px-10 px-4 mt-12 ${
+            isDarkMode 
+                ? "bg-dark-bg/90 text-dark-text-primary" 
+                : "bg-white/80 text-black"
+        }`}>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Logo & About */}
                 <div>
                     <div className="flex items-center space-x-3">
-                        <FaShopify className="text-4xl text-white" />
-                        <div className="text-md font-bold space-y-1 text-white">
+                        <FaShopify className={`text-4xl ${
+                            isDarkMode ? "text-green-700" : "text-green-700"
+                        }`} />
+                        <div className={`text-md font-bold space-y-1 ${
+                            isDarkMode ? "text-dark-text-primary" : "text-black"
+                        }`}>
                             <h1>Mahdi Karimian</h1>
                             <h2>Shopify Developer</h2>
                         </div>
                     </div>
-                    <p className="mt-4 text-gray-200">
+                    <p className={`mt-4 ${
+                        isDarkMode ? "text-dark-text-secondary" : "text-gray-700"
+                    }`}>
                         Helping businesses create Shopify stores that convert
                         visitors into loyal customers.
                     </p>
                     <Link
                         to="/order"
-                        className="mt-6 inline-block bg-white text-black py-2 px-6 rounded-lg hover:bg-lightGreen transition"
+                        className="mt-6 inline-block bg-white text-black py-2 px-6 rounded-lg hover:bg-green-700 transition"
                     >
                         Get a Free Consultation
                     </Link>
@@ -37,14 +47,14 @@ const Footer = () => {
                     <h3 className="font-semibold mb-4">Quick Links</h3>
                     <ul className="space-y-2">
                         <li>
-                            <Link to="/about" className="hover:text-lightGreen">
+                            <Link to="/about" className="hover:text-green-700">
                                 About me
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/projects"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Projects
                             </Link>
@@ -52,7 +62,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 to="/contact"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Contact
                             </Link>
@@ -60,7 +70,7 @@ const Footer = () => {
                         <li>
                             <a
                                 href="https://www.shopify.com"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Shopify Website
                             </a>
@@ -86,7 +96,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 to="order/basic"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Basic Plan
                             </Link>
@@ -94,7 +104,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 to="order/intermediate"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Intermediate Plan
                             </Link>
@@ -102,7 +112,7 @@ const Footer = () => {
                         <li>
                             <Link
                                 to="/order/advanced"
-                                className="hover:text-lightGreen"
+                                className="hover:text-green-700"
                             >
                                 Advanced Plan
                             </Link>
@@ -116,25 +126,25 @@ const Footer = () => {
                 <div className="flex space-x-4">
                     <a
                         href="https://www.facebook.com/share/1BbuP5ErwS/"
-                        className="hover:text-lightGreen"
+                        className="hover:text-green-700"
                     >
                         <FaFacebook size={27} />
                     </a>
                     <a
                         href="https://www.instagram.com/mahdii.kariimiian?igsh=aHBvNHBmeTlxaGFx"
-                        className="hover:text-lightGreen"
+                        className="hover:text-green-700"
                     >
                         <FaInstagram size={27} />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/mahdiikariimiian"
-                        className="hover:text-lightGreen"
+                        className="hover:text-green-700"
                     >
                         <FaLinkedin size={27} />
                     </a>
                     <a
                         href="https://github.com/Mahdii-Kariimiian"
-                        className="hover:text-lightGreen"
+                        className="hover:text-green-700"
                     >
                         <FaGithub size={27} />
                     </a>
@@ -142,7 +152,9 @@ const Footer = () => {
             </div>
 
             {/* Copyright */}
-            <div className="border-t mt-6 pt-4 text-center text-gray-200">
+            <div className={`border-t mt-6 pt-4 text-center ${
+                isDarkMode ? "text-dark-text-tertiary" : "text-gray-600"
+            }`}>
                 <p className="text-sm">
                     &copy; {new Date().getFullYear()} All Rights Reserved.
                 </p>

@@ -18,7 +18,7 @@ const AdvancedPlan = ({ isDarkMode }) => {
         >
             {/* Header */}
             <header className="text-center my-12">
-                <h1 className="text-4xl font-bold">
+                <h1 className="text-2xl sm:text-3xl font-semibold">
                     Advanced Shopify Store Development Plan
                 </h1>
                 <p

@@ -2,61 +2,117 @@
   "header": {
     "logo": "MK",
     "about": "Chi Sono",
+    "navigation": {
+      "about": "Chi Sono",
+      "projects": "Progetti",
+      "contact": "Contatto"
+    },
     "projects": "Progetti", 
     "contact": "Contatto",
-    "freeAudit": "Audit Gratuito"
+    "freeAudit": "Audit Gratuito",
+    "menu": "Menu"
   },
   "hero": {
-    "headline": "Shopify Store Che Convertono Visitatori in Clienti",
-    "subheadline": "Creo store Shopify ad alte prestazioni progettati per aumentare le vendite, non solo per apparire belli. Specializzato in ottimizzazione del tasso di conversione che fornisce risultati aziendali misurabili.",
-    "primaryCTA": "Audit Gratuito",
-    "secondaryCTA": "Vedi Case Studies"
+    "expertise": "Sviluppatore Shopify & Esperto CRO",
+    "headline": "Creo negozi Shopify che aumentano i ricavi, non solo l'aspetto visivo",
+    "subheadline": "Aiuto i brand ad aumentare le conversioni, migliorare le performance e scalare i ricavi con soluzioni Shopify basate sui dati.",
+    "primaryCTA": "Ottieni un audit gratuito del tuo store",
+    "secondaryCTA": "Vedi Case Studies",
+    "ctaMicroText": "Richiede 5 minuti • Nessun impegno",
+    "trustIndicators": "Audit gratuito di 5 minuti • Nessun obbligo • Insight reali"
+  },
+  "projectCard": {
+    "keyFeatures": "Caratteristiche Chiave",
+    "viewLive": "Vedi Live",
+    "moreFeatures": "+{count} altre caratteristiche",
+    "copy": "Copia",
+    "copied": "Copiato!"
+  },
+  "heroProjectCard": {
+    "realProject": "PROGETTO REALE",
+    "conceptProject": "PROGETTO CONCETTUALE",
+    "keyFeatures": "Caratteristiche Chiave",
+    "seeProject": "Vedi Progetto",
+    "viewCaseStudy": "Vedi Case Study",
+    "more": "+{count} altre",
+    "metrics": {
+      "conversion": "Conversione",
+      "speed": "Più Veloce",
+      "roi": "ROI"
+    }
   },
   "results": {
     "title": "Risultati Che Parlano da Soli",
-    "subtitle": "Metriche reali da store reali che ho costruito e ottimizzato",
+    "subtitle": "Risultati comprovati da progetti Shopify reali focalizzati su crescita e performance",
     "metrics": [
       {
         "value": "+25%",
-        "label": "Aumento Medio del Tasso di Conversione"
+        "label": "Aumento Medio del Tasso di Conversione",
+        "context": "Basato su ottimizzazione reale di store Shopify"
       },
       {
         "value": "40%",
-        "label": "Tempi di Caricamento Più Veloci"
+        "label": "Tempi di Caricamento Più Veloci",
+        "context": "Raggiunto attraverso ottimizzazione delle performance"
       },
       {
         "value": "3.2x",
-        "label": "Ritorno sull'Investimento"
+        "label": "Ritorno sull'Investimento",
+        "context": "Da CRO e design focalizzato sulla conversione"
       },
       {
-        "value": "98%",
-        "label": "Soddisfazione dei Clienti"
+        "value": "100%",
+        "label": "Soddisfazione Clienti",
+        "context": "Attraverso supporto dedicato e risultati"
       }
-    ]
+    ],
+    "projectReference": "Basato su risultati da progetti reali come Mister Spare Parts"
   },
   "services": {
     "title": "Servizi Che Guidano la Crescita",
-    "subtitle": "Soluzioni Shopify complete focalizzate su una cosa: aumentare i tuoi ricavi",
+    "subtitle": "Tutto ciò di cui hai bisogno per costruire, ottimizzare e scalare il tuo negozio Shopify",
     "items": [
       {
-        "title": "Sviluppo Store Shopify",
-        "description": "Store personalizzati ottimizzati per le conversioni dal primo giorno. Nessun template, solo design strategico che vende.",
-        "outcome": "Lancia uno store che converte i visitatori in acquirenti"
+        "title": "Sviluppo Negozi Shopify",
+        "description": "Costruisci un negozio Shopify ad alta conversione che trasforma visitatori in clienti paganti e massimizza il tuo potenziale di fatturato.",
+        "cta": "Inizia Ora",
+        "featured": true
       },
       {
-        "title": "Ottimizzazione CRO", 
-        "description": "Ottimizzazione del tasso di conversione basata sui dati utilizzando test A/B, heatmap e analisi del comportamento utente.",
-        "outcome": "Converte più visitatori in clienti paganti"
+        "title": "Ottimizzazione CRO",
+        "description": "Aumenta le conversioni e trasforma più visitatori in clienti paganti con strategie di ottimizzazione basate su dati.",
+        "cta": "Scopri Come Funziona",
+        "featured": true
       },
       {
         "title": "Ottimizzazione Velocità",
-        "description": "Prestazioni dello store fulminee che mantengono i visitatori coinvolti e migliorano i posizionamenti di ricerca.",
-        "outcome": "Conversioni più elevate e migliori posizioni SEO"
+        "description": "Aumenta la velocità del tuo negozio per migliorare i ranking, ridurre i tassi di rimbalzo e aumentare la soddisfazione dei clienti.",
+        "cta": "Visualizza Dettagli"
       },
       {
-        "title": "Setup Email Marketing",
-        "description": "Configurazione completa dell'automazione Klaviyo inclusi flussi di benvenuto, recupero carrelli abbandonati e segmentazione.",
-        "outcome": "Generazione di ricavi automatizzata 24/7"
+        "title": "Configurazione Email Marketing",
+        "description": "Automatizza il tuo email marketing per recuperare carrelli abbandonati e aumentare il valore lifetime dei clienti.",
+        "cta": "Visualizza Dettagli"
+      },
+      {
+        "title": "Audit Negozio Shopify",
+        "description": "Ottieni un'analisi completa delle performance del tuo negozio e scopri opportunità di fatturato nascoste.",
+        "cta": "Visualizza Dettagli"
+      },
+      {
+        "title": "Audit Conversione e Strategia",
+        "description": "Identifica le barriere di conversione e ricevi una roadmap chiara per aumentare la redditività del tuo negozio.",
+        "cta": "Visualizza Dettagli"
+      },
+      {
+        "title": "Configurazione Analytics e Tracking",
+        "description": "Implementa un tracciamento accurato per misurare ciò che conta e prendere decisioni basate sui dati per la crescita.",
+        "cta": "Visualizza Dettagli"
+      },
+      {
+        "title": "Configurazione e Ottimizzazione Google Ads",
+        "description": "Lancia campagne pubblicitarie profittevoli che guidano traffico qualificato e generano vendite consistenti.",
+        "cta": "Visualizza Dettagli"
       }
     ]
   },
@@ -105,24 +161,70 @@
   "trust": {
     "title": "Affidato da Marchi in Crescita",
     "subtitle": "Risultati che hanno aiutato le aziende a scalare a 6 cifre e oltre",
+    "badge": "Recensione da Freelancer",
     "testimonials": [
       {
-        "content": "Mahdi ha trasformato il nostro store in difficoltà in una macchina di conversione. I nostri ricavi sono raddoppiati in 3 mesi.",
-        "author": "Sarah Chen",
-        "role": "Fondatrice, Velvet Pour"
+        "name": "Antonio S.",
+        "rating": 5.0,
+        "text": "lavoro perfetto, veloce e dettagliato",
+        "skills": ["Shopify", "CRO", "Ottimizzazione Velocità", "SEO"]
       },
       {
-        "content": "L'attenzione ai dettagli e il focus sulle conversioni è ineguagliabile. Miglior investimento che abbiamo fatto.",
-        "author": "Marco Rossi", 
-        "role": "CEO, De Martini"
+        "name": "Daniele S.",
+        "rating": 5.0,
+        "text": "Mahdi è un professionista estremamente affidabile e competente. Ha dimostrato un'elevata qualità del lavoro, rispettando sempre le tempistiche e mantenendo standard molto alti. La comunicazione è stata chiara, puntuale e proattiva durante tutta la collaborazione. Si distingue per la sua professionalità e per la capacità di comprendere rapidamente i requisiti, proponendo anche soluzioni migliorative. Collaborare con lui è stato semplice ed efficace.",
+        "skills": ["Shopify", "Sviluppo Personalizzato", "Performance", "Analytics"]
       }
     ]
   },
   "finalCTA": {
-    "title": "Pronto ad Aumentare le Tue Vendite?",
-    "subtitle": "Ottieni un audit gratuito di 5 minuti del tuo store Shopify con raccomandazioni attuabili",
+    "title": "Ottieni un Audit Shopify Gratuito Che Mostra Esattamente Come Aumentare le Tue Vendite",
+    "subtitle": "Analizzerò il tuo store e ti mostrerò esattamente cosa sta danneggiando le tue conversioni e come sistemarlo",
     "placeholder": "Inserisci l'URL del tuo store...",
-    "button": "Audit Gratuito",
-    "note": "Nessun obbligo. Insight reali in 5 minuti o meno."
+    "button": "Ottieni il Mio Audit Gratuito",
+    "trust": "Nessuno spam • Nessun obbligo • Insight reali",
+    "note": "Analizzerò il tuo store e ti risponderò entro 24 ore con insight attuabili."
+  },
+  "footer": {
+    "brand": {
+      "name": "Mahdi Karimian",
+      "title": "Sviluppatore Shopify & Esperto CRO",
+      "description": "Aiuto le aziende a creare store Shopify ad alta conversione che generano risultati reali.",
+      "cta": "Audit Gratuito"
+    },
+    "quickLinks": {
+      "title": "Link Veloci",
+      "links": {
+        "home": "Home",
+        "projects": "Progetti",
+        "services": "Servizi",
+        "process": "Processo",
+        "contact": "Contatto"
+      }
+    },
+    "services": {
+      "title": "Servizi",
+      "items": [
+        "Sviluppo Store Shopify",
+        "Ottimizzazione CRO",
+        "Ottimizzazione Velocità",
+        "Configurazione Email Marketing",
+        "Audit Store Shopify",
+        "Audit Conversioni & Strategia",
+        "Configurazione Analytics & Tracking",
+        "Configurazione & Ottimizzazione Google Ads"
+      ]
+    },
+    "getStarted": {
+      "title": "Inizia",
+      "links": {
+        "audit": "Ottieni Audit Gratuito",
+        "call": "Prenota una Call",
+        "contact": "Contattami"
+      }
+    },
+    "bottom": {
+      "copyright": "© 2026 Mahdi Karimian. Tutti i diritti riservati."
+    }
   }
 }

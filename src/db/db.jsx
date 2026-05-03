@@ -23,7 +23,7 @@ const pricingData = [
     {
         title: "Basic Plan",
         url: "basic",
-        price: "$499",
+        price: "Starting from $800",
         description: [
             "Pre-made template design",
             "Shopify store setup and installation",
@@ -31,11 +31,12 @@ const pricingData = [
             "Initial payment and shipping settings",
             "Basic training for using the admin panel",
         ],
+        featured: false,
     },
     {
         title: "Intermediate Plan",
         url: "intermediate",
-        price: "$899",
+        price: "Starting from $1500",
         description: [
             "Custom template design or editing pre-made templates",
             "Adding up to 50 products",
@@ -43,11 +44,12 @@ const pricingData = [
             "Adding product pages and additional pages",
             "Installing Shopify apps and tools",
         ],
+        featured: true,
     },
     {
         title: "Advanced Plan",
         url: "advanced",
-        price: "Upon Agreement",
+        price: "Custom Pricing",
         description: [
             "Fully custom design from scratch",
             "Adding up to 200 products",
@@ -55,6 +57,7 @@ const pricingData = [
             "Installing business-specific apps and tools",
             "Search Engine Optimization (SEO)",
         ],
+        featured: false,
     },
 ];
 

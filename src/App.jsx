@@ -2,12 +2,14 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { LanguageProvider } from "./contexts/LanguageContext";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 import Header from "./components/Header";
+import MobileMenuOverlay from "./components/MobileMenuOverlay";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import AboutPage from "./pages/AboutPage";
 import Contact from "./pages/Contact";
 import Projects from "./components/Projects";
+import ProjectPage from "./pages/ProjectPage";
 import Order from "./pages/Order";
 import BasicPlan from "./components/BasicPlan";
 import IntermediatePlan from "./components/IntermediatePlan";
@@ -15,6 +17,7 @@ import AdvancedPlan from "./components/advancedPlan";
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <LanguageProvider>
@@ -22,8 +25,8 @@ function App() {
                 <div
                     className={
                         isDarkMode
-                            ? "bg-gray-900 text-white"
-                            : "bg-white text-gray-900"
+                            ? "bg-darker-bg text-white"
+                            : "bg-light-bg text-gray-900"
                     }
                 >
                     <div className="relative flex flex-col min-h-screen">
@@ -31,6 +34,8 @@ function App() {
                             <Header
                                 isDarkMode={isDarkMode}
                                 setIsDarkMode={setIsDarkMode}
+                                isMenuOpen={isMenuOpen}
+                                setIsMenuOpen={setIsMenuOpen}
                             />
                         </div>
 
@@ -45,8 +50,12 @@ function App() {
                                     element={<Projects isDarkMode={isDarkMode} />}
                                 />
                                 <Route
+                                    path="/projects/:projectId"
+                                    element={<ProjectPage isDarkMode={isDarkMode} />}
+                                />
+                                <Route
                                     path="/about"
-                                    element={<About isDarkMode={isDarkMode} />}
+                                    element={<AboutPage isDarkMode={isDarkMode} />}
                                 />
                                 <Route
                                     path="/contact"
@@ -76,6 +85,14 @@ function App() {
                         </main>
                         <Footer isDarkMode={isDarkMode} />
                     </div>
+                    
+                    {/* Mobile Menu Overlay - rendered at root level */}
+                    <MobileMenuOverlay
+                        isOpen={isMenuOpen}
+                        onClose={() => setIsMenuOpen(false)}
+                        isDarkMode={isDarkMode}
+                        setIsDarkMode={setIsDarkMode}
+                    />
                 </div>
             </Router>
         </LanguageProvider>

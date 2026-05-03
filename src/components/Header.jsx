@@ -1,11 +1,10 @@
-import { FaSun, FaMoon, FaGlobe } from "react-icons/fa";
+import { FaGlobe, FaSun, FaMoon } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
+import logo from "../assets/new-logo.png";
 
-const Header = ({ isDarkMode, setIsDarkMode }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = ({ isDarkMode, setIsDarkMode, isMenuOpen, setIsMenuOpen }) => {
     const { language, changeLanguage, t } = useLanguage();
 
     const toggleMenu = () => {
@@ -24,155 +23,87 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
 
     return (
         <header
-            className={`w-full pt-6 md:px-6 px-4 flex gap-10 justify-between items-center relative ${
+            className={`w-full py-3 md:px-8 px-3 flex justify-between items-center relative backdrop-blur-lg z-[9998] ${
                 isDarkMode
-                    ? "bg-darkerGreen text-white"
-                    : "bg-transparent text-black"
+                    ? "bg-dark-bg/90 text-dark-text-primary border-b border-dark-border"
+                    : "bg-white/80 text-black border-b border-gray-200"
             }`}
         >
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
-                    isDarkMode ? "bg-green-600 text-white" : "bg-green-600 text-white"
-                }`}>
-                    {t('header.logo')}
-                </div>
-                <span className="text-xl font-bold">Mahdi Karimian</span>
+            <Link to="/" className="flex items-center space-x-3 flex-shrink-0">
+                <img 
+                    src={logo} 
+                    alt="Mahdi Karimian Logo" 
+                    className="w-10 md:w-16 lg:w-20 object-contain flex-shrink-0"
+                />
             </Link>
 
             {/* Mobile Menu */}
-            <div className="md:hidden flex w-52 justify-end items-center z-20">
+            <div className="md:hidden flex items-center z-50">
                 <button
                     onClick={toggleMenu}
                     className="text-3xl focus:outline-none"
                 >
                     <span>&#9776;</span>
                 </button>
-                <div
-                    className={`fixed top-0 right-0 w-64 h-full pt-8 ${
-                        isDarkMode
-                            ? "bg-darkerGreen text-white"
-                            : "bg-white text-black"
-                    } shadow-lg p-4 space-y-4 transform ${
-                        isMenuOpen ? "translate-x-0" : "translate-x-full"
-                    } transition-transform duration-300 ease-in-out`}
-                >
-                    <div className="flex items-center justify-between space-x-4">
-                        {/* Dark Mode Toggle for Mobile */}
-                        <button
-                            onClick={toggleDarkMode}
-                            className="flex p-2 rounded-full bg-gray-200 hover:bg-lightGreen transition duration-200"
-                        >
-                            {!isDarkMode ? (
-                                <FaMoon className="text-gray-800 text-xl" />
-                            ) : (
-                                <FaSun className="text-gray-800 text-xl" />
-                            )}
-                        </button>
-
-                        <button
-                            onClick={toggleMenu}
-                            className="text-3xl focus:outline-none"
-                        >
-                            <span>&#10005;</span>
-                        </button>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div className="flex flex-col justify-center items-center space-y-6 py-10">
-                        <Link
-                            to="/projects"
-                            className="hover:text-green-400 transition duration-200"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('header.projects')}
-                        </Link>
-                        <Link
-                            to="/contact"
-                            className="hover:text-green-400 transition duration-200"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('header.contact')}
-                        </Link>
-                        <Link
-                            to="/about"
-                            className="hover:text-green-400 transition duration-200"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('header.about')}
-                        </Link>
-                        
-                        {/* Language Switcher Mobile */}
-                        <div className="flex space-x-2">
-                            {languages.map((lang) => (
-                                <button
-                                    key={lang.code}
-                                    onClick={() => changeLanguage(lang.code)}
-                                    className={`px-3 py-1 rounded-lg transition duration-200 ${
-                                        language === lang.code
-                                            ? "bg-green-600 text-white"
-                                            : isDarkMode
-                                            ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                                    }`}
-                                >
-                                    {lang.name}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Shopify Page Button in Mobile */}
-                    <Link
-                        onClick={() => setIsMenuOpen(false)}
-                        to="/order"
-                        className="flex mx-auto items-center space-x-2 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full justify-center transition duration-200"
-                    >
-                        <span className="whitespace-nowrap">
-                            {t('header.freeAudit')}
-                        </span>
-                        <HiArrowNarrowRight />
-                    </Link>
-                </div>
             </div>
 
+            
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8 w-full justify-between">
-                {/* Navigation Links for Desktop */}
-                <div className="flex gap-8 items-center">
+            <div className="hidden md:flex items-center justify-between w-full">
+                {/* Navigation Links */}
+                <nav className="flex items-center space-x-8 ml-8">
                     <Link
                         to="/about"
-                        className="hover:text-green-400 transition duration-200"
+                        className="text-sm font-medium relative group transition-all duration-300"
                     >
                         {t('header.about')}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link
                         to="/projects"
-                        className="hover:text-green-400 transition duration-200"
+                        className="text-sm font-medium relative group transition-all duration-300"
                     >
                         {t('header.projects')}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link
                         to="/contact"
-                        className="hover:text-green-400 transition duration-200"
+                        className="text-sm font-medium relative group transition-all duration-300"
                     >
                         {t('header.contact')}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    
-                    {/* Language Switcher Desktop */}
-                    <div className="flex items-center space-x-1">
-                        <FaGlobe className={`w-4 h-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`} />
-                        <div className="flex space-x-1">
+                </nav>
+
+                {/* Right Side Controls */}
+                <div className="flex items-center gap-3">
+                    {/* Language Dropdown */}
+                    <div className="relative group">
+                        <button className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-105 ${
+                            isDarkMode
+                                ? "bg-dark-surface/50 hover:bg-dark-surface-hover/50 text-dark-text-secondary backdrop-blur-sm"
+                                : "bg-gray-100/50 hover:bg-gray-200/50 text-gray-700 backdrop-blur-sm"
+                        }`}>
+                            <span className="text-xs font-semibold">
+                                {languages.find(lang => lang.code === language)?.name}
+                            </span>
+                        </button>
+                        
+                        {/* Dropdown Menu */}
+                        <div className={`absolute top-full right-0 mt-3 w-36 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-xl ${
+                            isDarkMode ? "bg-dark-surface border-dark-border" : "bg-white/95 border border-gray-200"
+                        }`}>
                             {languages.map((lang) => (
                                 <button
                                     key={lang.code}
                                     onClick={() => changeLanguage(lang.code)}
-                                    className={`px-2 py-1 text-sm rounded-lg transition duration-200 ${
+                                    className={`w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
                                         language === lang.code
-                                            ? "bg-green-600 text-white"
-                                            : isDarkMode
-                                            ? "text-gray-400 hover:text-white hover:bg-gray-700"
-                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                                            ? "bg-green-700 text-white"
+                                            : isDarkMode 
+                                            ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                            : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                     }`}
                                 >
                                     {lang.name}
@@ -180,43 +111,34 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
                             ))}
                         </div>
                     </div>
-                </div>
 
-                {/* Dark Mode Toggle and Order Button */}
-                <div className="flex gap-4 items-center">
+                    {/* Dark Mode Toggle */}
                     <button
                         onClick={toggleDarkMode}
-                        className={`p-3 rounded-full transition duration-200 ${
+                        className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-105 ${
                             isDarkMode
-                                ? "bg-gray-700 hover:bg-gray-600 text-yellow-400"
-                                : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                                ? "bg-dark-surface/50 hover:bg-dark-surface-hover/50 text-yellow-400 backdrop-blur-sm"
+                                : "bg-gray-100/50 hover:bg-gray-200/50 text-gray-700 backdrop-blur-sm"
                         }`}
                     >
                         {!isDarkMode ? (
-                            <FaMoon />
+                            <FaMoon className="w-4 h-4" />
                         ) : (
-                            <FaSun />
+                            <FaSun className="w-4 h-4" />
                         )}
                     </button>
 
-                    {/* Shopify Page Button for Desktop */}
+                    {/* CTA Button */}
                     <Link
                         to="/order"
-                        className="flex items-center space-x-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full justify-center transition duration-200"
+                        className="hidden sm:flex items-center space-x-2 px-5 py-2.5 bg-green-700 text-white text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
                     >
                         <span>{t('header.freeAudit')}</span>
-                        <HiArrowNarrowRight />
+                        <HiArrowNarrowRight className="w-4 h-4" />
                     </Link>
                 </div>
             </div>
 
-            {/* Dark Overlay behind the menu for Mobile */}
-            {isMenuOpen && (
-                <div
-                    className="fixed inset-0 bg-black opacity-50 md:hidden z-10"
-                    onClick={toggleMenu}
-                />
-            )}
         </header>
     );
 };

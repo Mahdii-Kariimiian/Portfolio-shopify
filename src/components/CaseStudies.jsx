@@ -2,32 +2,32 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { HiArrowRight, HiTrendingUp, HiLightBulb, HiCheckCircle } from "react-icons/hi";
 
 export default function CaseStudies({ isDarkMode }) {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     return (
-        <section id="case-studies" className={`py-20 px-4 sm:px-6 lg:px-8 ${
-            isDarkMode ? "bg-gray-800 text-white" : "bg-gray-50 text-gray-900"
-        }`}>
+        <section id="case-studies" className={`py-10 px-4 sm:px-6 lg:px-8 ${
+            isDarkMode ? "bg-darker-bg text-dark-text-primary" : "bg-light-bg text-gray-900"
+        } ${language === 'fa' ? 'rtl' : 'ltr'}`}>
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                    <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
                         {t('caseStudies.title')}
                     </h2>
                     <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-                        isDarkMode ? "text-gray-300" : "text-gray-600"
+                        isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
                     }`}>
                         {t('caseStudies.subtitle')}
                     </p>
                 </div>
 
-                <div className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {t('caseStudies.studies').map((study, index) => (
                         <div
                             key={index}
-                            className={`grid lg:grid-cols-3 gap-8 p-8 rounded-2xl ${
+                            className={`group p-8 rounded-2xl transition-all duration-300 hover:scale-105 ${
                                 isDarkMode 
-                                    ? "bg-gray-700 border border-gray-600" 
-                                    : "bg-white border border-gray-200 shadow-lg"
+                                    ? "bg-dark-surface hover:bg-dark-surface-hover border border-dark-border" 
+                                    : "bg-white hover:bg-gray-50 border border-gray-200 shadow-lg"
                             }`}
                         >
                             {/* Problem */}
@@ -38,7 +38,7 @@ export default function CaseStudies({ isDarkMode }) {
                                 </div>
                                 <h3 className="text-xl font-bold mb-2">{study.name}</h3>
                                 <p className={`leading-relaxed ${
-                                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                                    isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
                                 }`}>
                                     {study.problem}
                                 </p>
@@ -51,7 +51,7 @@ export default function CaseStudies({ isDarkMode }) {
                                     <span>Solution</span>
                                 </div>
                                 <p className={`leading-relaxed ${
-                                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                                    isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
                                 }`}>
                                     {study.solution}
                                 </p>
@@ -63,8 +63,8 @@ export default function CaseStudies({ isDarkMode }) {
                                     <HiTrendingUp className="w-5 h-5" />
                                     <span>Result</span>
                                 </div>
-                                <p className={`leading-relaxed font-medium ${
-                                    isDarkMode ? "text-green-400" : "text-green-600"
+                                <p className={`leading-relaxed ${
+                                    isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
                                 }`}>
                                     {study.result}
                                 </p>

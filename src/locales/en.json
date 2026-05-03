@@ -2,61 +2,116 @@
   "header": {
     "logo": "MK",
     "about": "About",
+    "navigation": {
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
     "projects": "Projects", 
     "contact": "Contact",
     "freeAudit": "Get Free Audit"
   },
   "hero": {
-    "headline": "Shopify Stores That Convert Visitors into Customers",
-    "subheadline": "I build high-performance Shopify stores designed to increase sales, not just look good. Specializing in conversion optimization that delivers measurable business results.",
-    "primaryCTA": "Get Free Audit",
-    "secondaryCTA": "View Case Studies"
+    "expertise": "Shopify Developer & CRO Expert",
+    "headline": "I Build Shopify Stores That Increase Revenue, Not Just Look Good",
+    "subheadline": "I help brands increase conversions, improve performance, and scale revenue with data-driven Shopify solutions.",
+    "primaryCTA": "Get Your Free Store Audit",
+    "secondaryCTA": "View Case Studies",
+    "ctaMicroText": "Takes 5 minutes • No commitment",
+    "trustIndicators": "Free 5-minute audit • No obligation • Real insights"
+  },
+  "projectCard": {
+    "keyFeatures": "Key Features",
+    "viewLive": "View Live",
+    "moreFeatures": "+{count} more features",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "heroProjectCard": {
+    "realProject": "REAL PROJECT",
+    "conceptProject": "CONCEPT PROJECT",
+    "keyFeatures": "Key Features",
+    "seeProject": "See Project",
+    "viewCaseStudy": "View Case Study",
+    "more": "+{count} more",
+    "metrics": {
+      "conversion": "Conversion",
+      "speed": "Faster",
+      "roi": "ROI"
+    }
   },
   "results": {
     "title": "Results That Speak for Themselves",
-    "subtitle": "Real metrics from real stores I've built and optimized",
+    "subtitle": "Proven results from real Shopify projects focused on growth and performance",
     "metrics": [
       {
         "value": "+25%",
-        "label": "Average Conversion Rate Increase"
+        "label": "Average Conversion Rate Increase",
+        "context": "Based on real Shopify store optimization"
       },
       {
         "value": "40%",
-        "label": "Faster Load Times"
+        "label": "Faster Load Times",
+        "context": "Achieved through performance optimization"
       },
       {
         "value": "3.2x",
-        "label": "Return on Investment"
+        "label": "Return on Investment",
+        "context": "From CRO and conversion-focused design"
       },
       {
-        "value": "98%",
-        "label": "Client Satisfaction"
+        "value": "100%",
+        "label": "Client Satisfaction",
+        "context": "Through dedicated support and results"
       }
-    ]
+    ],
+    "projectReference": "Based on results from real projects like Mister Spare Parts"
   },
   "services": {
     "title": "Services That Drive Growth",
-    "subtitle": "End-to-end Shopify solutions focused on one thing: increasing your revenue",
+    "subtitle": "Everything you need to build, optimize, and scale your Shopify store",
     "items": [
       {
         "title": "Shopify Store Development",
-        "description": "Custom-built stores optimized for conversions from day one. No templates, just strategic design that sells.",
-        "outcome": "Launch a store that converts visitors into buyers"
+        "description": "Build a high-converting Shopify store that turns visitors into paying customers and maximizes your revenue potential.",
+        "cta": "Get Started",
+        "featured": true
       },
       {
-        "title": "CRO Optimization", 
-        "description": "Data-driven conversion rate optimization using A/B testing, heatmaps, and user behavior analysis.",
-        "outcome": "Turn more visitors into paying customers"
+        "title": "CRO Optimization",
+        "description": "Increase conversions and turn more visitors into paying customers with data-driven optimization strategies.",
+        "cta": "See How It Works",
+        "featured": true
       },
       {
         "title": "Speed Optimization",
-        "description": "Lightning-fast store performance that keeps visitors engaged and improves search rankings.",
-        "outcome": "Higher conversions and better SEO rankings"
+        "description": "Boost your store's speed to improve rankings, reduce bounce rates, and increase customer satisfaction.",
+        "cta": "View Details"
       },
       {
         "title": "Email Marketing Setup",
-        "description": "Complete Klaviyo automation setup including welcome flows, abandoned cart recovery, and segmentation.",
-        "outcome": "Automated revenue generation 24/7"
+        "description": "Automate your email marketing to recover abandoned carts and increase customer lifetime value.",
+        "cta": "View Details"
+      },
+      {
+        "title": "Shopify Store Audit",
+        "description": "Get a comprehensive analysis of your store's performance and discover hidden revenue opportunities.",
+        "cta": "View Details"
+      },
+      {
+        "title": "Conversion Audit & Strategy",
+        "description": "Identify conversion barriers and receive a clear roadmap to increase your store's profitability.",
+        "cta": "View Details"
+      },
+      {
+        "title": "Analytics & Tracking Setup",
+        "description": "Implement accurate tracking to measure what matters and make data-driven decisions for growth.",
+        "cta": "View Details"
+      },
+      {
+        "title": "Google Ads Setup & Optimization",
+        "description": "Launch profitable ad campaigns that drive qualified traffic and generate consistent sales.",
+        "cta": "View Details"
       }
     ]
   },
@@ -105,24 +160,70 @@
   "trust": {
     "title": "Trusted by Growing Brands",
     "subtitle": "Results that have helped businesses scale to 6-figures and beyond",
+    "badge": "From Freelancer",
     "testimonials": [
       {
-        "content": "Mahdi transformed our struggling store into a conversion machine. Our revenue doubled in 3 months.",
-        "author": "Sarah Chen",
-        "role": "Founder, Velvet Pour"
+        "name": "Antonio S.",
+        "rating": 5.0,
+        "text": "perfect job, fast and detailed",
+        "skills": ["Shopify", "CRO", "Speed Optimization", "SEO"]
       },
       {
-        "content": "The attention to detail and focus on conversions is unmatched. Best investment we've made.",
-        "author": "Marco Rossi", 
-        "role": "CEO, De Martini"
+        "name": "Daniele S.",
+        "rating": 5.0,
+        "text": "Mahdi is an extremely reliable and competent professional. He demonstrated high quality work, always respecting deadlines and maintaining very high standards. Communication was clear, punctual, and proactive throughout the collaboration. He stands out for his professionalism and ability to quickly understand requirements, also proposing improvement solutions. Working with him was simple and effective.",
+        "skills": ["Shopify", "Custom Development", "Performance", "Analytics"]
       }
     ]
   },
   "finalCTA": {
-    "title": "Ready to Increase Your Sales?",
-    "subtitle": "Get a free 5-minute audit of your Shopify store with actionable recommendations",
+    "title": "Get a Free Shopify Audit That Shows Exactly How to Increase Your Sales",
+    "subtitle": "I'll analyze your store and show you exactly what's hurting your conversions and how to fix it",
     "placeholder": "Enter your store URL...",
-    "button": "Get Free Audit",
-    "note": "No obligation. Real insights in 5 minutes or less."
+    "button": "Get My Free Audit",
+    "trust": "No spam • No obligation • Real insights",
+    "note": "I'll analyze your store and get back to you within 24 hours with actionable insights."
+  },
+  "footer": {
+    "brand": {
+      "name": "Mahdi Karimian",
+      "title": "Shopify Developer & CRO Expert",
+      "description": "Helping businesses build high-converting Shopify stores that drive real results.",
+      "cta": "Get Free Audit"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": {
+        "home": "Home",
+        "projects": "Projects",
+        "services": "Services",
+        "process": "Process",
+        "contact": "Contact"
+      }
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        "Shopify Store Development",
+        "CRO Optimization",
+        "Speed Optimization",
+        "Email Marketing Setup",
+        "Shopify Store Audit",
+        "Conversion Audit & Strategy",
+        "Analytics & Tracking Setup",
+        "Google Ads Setup & Optimization"
+      ]
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "links": {
+        "audit": "Get Free Audit",
+        "call": "Book a Call",
+        "contact": "Contact Me"
+      }
+    },
+    "bottom": {
+      "copyright": "© 2026 Mahdi Karimian. All rights reserved."
+    }
   }
 }
