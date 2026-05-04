@@ -1,6 +1,6 @@
 import React from "react";
 
-const PricingCard = ({ title, price, description, isDarkMode }) => {
+const PricingCard = ({ title, price, features, isDarkMode }) => {
     return (
         <div
             className={`group relative border rounded-2xl transition-all duration-300 hover:scale-[1.02] cursor-default p-6 flex flex-col items-center max-md:max-w-96 ${
@@ -18,7 +18,7 @@ const PricingCard = ({ title, price, description, isDarkMode }) => {
                 {price}
             </p>
             <ul className="mt-4 space-y-2">
-                {description.map((item, index) => (
+                {features.map((item, index) => (
                     <li key={index} className='flex items-start'>
                         <span className='mr-2'>•</span>
                         {item}

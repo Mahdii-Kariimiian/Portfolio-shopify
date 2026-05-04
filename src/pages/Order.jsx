@@ -64,37 +64,46 @@ const Order = ({ isDarkMode }) => {
     const handlePrevStep = () => {
         setCurrentStep(1);
     };
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+    try {
+     const response = await emailjs.send(
+    "service_xm5pbcm",
+    "template_bqcniev",
+    {
+        name: formData.from_name,
+        email: formData.from_email,
+        businessType: formData.business_type,
+        productsCount: formData.products_count,
+        message: formData.message,
+        businessModel: formData.business_model,
+        dropshipping: formData.business_model === "Dropshipping" ? "Yes" : "No",
+        projectTime: formData.timeline,
 
-        try {
-            const response = await emailjs.send(
-                "service_xm5pbcm",
-                "template_bqcniev",
-                {
-                    from_name: formData.from_name,
-                    from_email: formData.from_email,
-                    message: formData.message,
-                    goal: formData.goal,
-                    budget: formData.budget,
-                    products_count: formData.products_count,
-                    business_model: formData.business_model,
-                    timeline: formData.timeline,
-                    website: formData.website || "not provided",
-                }
-            );
+        budget: formData.budget,
+        website: formData.website || "Not provided",
+    },
+    "mV9rGASfViXLoUkhx"
+);
 
-            if (response.status === 200) {
-                setSubmitted(true);
-            }
-        } catch (error) {
-            console.error('EmailJS error:', error);
-        } finally {
-            setIsSubmitting(false);
+        if (response.status === 200) {
+            setSubmitted(true);
         }
-    };
+
+    } catch (error) {
+        console.error("EmailJS error:", error);
+    } finally {
+        setIsSubmitting(false);
+    }
+};
+    useEffect(() => {
+        // Initialize EmailJS
+        emailjs.init({
+            publicKey: "mV9rGASfViXLoUkhx",
+        });
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -144,7 +153,7 @@ const Order = ({ isDarkMode }) => {
                                         {card.price}
                                     </div>
                                     <ul className="space-y-2 text-sm">
-                                        {card.description.map((item, index) => (
+                                        {card.features.map((item, index) => (
                                             <li key={index} className={`flex items-start ${
                                                 isDarkMode ? "text-gray-300" : "text-gray-600"
                                             }`}>

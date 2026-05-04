@@ -1,6 +1,24 @@
 import { HiArrowRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { services } from "../db/db";
 
 const ServiceCard = ({ service, index, isDarkMode }) => {
+    // Map service titles to slugs from services array in db
+    const getServiceSlug = (title) => {
+        const titleToSlugMap = {
+            "Shopify Store Development": "shopify-store-development",
+            "CRO Optimization": "cro-optimization", 
+            "Speed Optimization": "speed-optimization",
+            "Email Marketing Setup": "email-marketing",
+            "Shopify Store Audit": "shopify-store-audit",
+            "Conversion Audit & Strategy": "conversion-audit-strategy",
+            "Analytics & Tracking Setup": "analytics-tracking-setup",
+            "Google Ads Setup & Optimization": "google-ads-setup-optimization"
+        };
+        
+        return titleToSlugMap[title] || 'shopify-store-development';
+    };
+
     // Different icons for different services
     const getIcon = (index) => {
         const icons = [
@@ -81,17 +99,20 @@ const ServiceCard = ({ service, index, isDarkMode }) => {
             </p>
 
             {/* CTA button with text */}
-            <button className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                service.featured
-                    ? (isDarkMode
-                        ? "bg-green-700 text-white hover:bg-green-600"
-                        : "bg-green-700 text-white hover:bg-green-600")
-                    : (isDarkMode
-                        ? "bg-green-700/20 text-green-700 hover:bg-green-700/30"
-                        : "bg-green-700/10 text-green-700 hover:bg-green-700/20")
-            }`}>
+            <Link 
+                to={`/services/${getServiceSlug(service.title)}`}
+                className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
+                    service.featured
+                        ? (isDarkMode
+                            ? "bg-green-700 text-white hover:bg-green-600"
+                            : "bg-green-700 text-white hover:bg-green-600")
+                        : (isDarkMode
+                            ? "bg-green-700/20 text-green-700 hover:bg-green-700/30"
+                            : "bg-green-700/10 text-green-700 hover:bg-green-700/20")
+                }`}
+            >
                 {service.cta || "View Details"}
-            </button>
+            </Link>
 
             {/* Subtle gradient overlay on hover */}
             <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ${

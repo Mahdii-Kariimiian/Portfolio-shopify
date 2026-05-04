@@ -75,43 +75,51 @@
         "title": "Shopify Store Development",
         "description": "Build a high-converting Shopify store that turns visitors into paying customers and maximizes your revenue potential.",
         "cta": "Get Started",
-        "featured": true
+        "featured": true,
+        "slug": "shopify-store-development"
       },
       {
         "title": "CRO Optimization",
         "description": "Increase conversions and turn more visitors into paying customers with data-driven optimization strategies.",
         "cta": "See How It Works",
-        "featured": true
+        "featured": true,
+        "slug": "cro-optimization"
       },
       {
         "title": "Speed Optimization",
         "description": "Boost your store's speed to improve rankings, reduce bounce rates, and increase customer satisfaction.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "speed-optimization"
       },
       {
         "title": "Email Marketing Setup",
         "description": "Automate your email marketing to recover abandoned carts and increase customer lifetime value.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "email-marketing-setup"
       },
       {
         "title": "Shopify Store Audit",
         "description": "Get a comprehensive analysis of your store's performance and discover hidden revenue opportunities.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "shopify-store-audit"
       },
       {
         "title": "Conversion Audit & Strategy",
         "description": "Identify conversion barriers and receive a clear roadmap to increase your store's profitability.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "conversion-audit-strategy"
       },
       {
         "title": "Analytics & Tracking Setup",
         "description": "Implement accurate tracking to measure what matters and make data-driven decisions for growth.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "analytics-tracking-setup"
       },
       {
         "title": "Google Ads Setup & Optimization",
         "description": "Launch profitable ad campaigns that drive qualified traffic and generate consistent sales.",
-        "cta": "View Details"
+        "cta": "View Details",
+        "slug": "google-ads-setup-optimization"
       }
     ]
   },

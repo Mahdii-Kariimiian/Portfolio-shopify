@@ -20,45 +20,144 @@ import misterDesktop4 from "../assets/screenshots/misterspareparts-screenshot-de
 import misterMobile1 from "../assets/screenshots/misterspareparts-screenshot-mobile-1.png"
 
 const pricingData = [
-    {
-        title: "Basic Plan",
-        url: "basic",
-        price: "Starting from $800",
-        description: [
-            "Pre-made template design",
-            "Shopify store setup and installation",
-            "Adding initial products (up to 15 products)",
-            "Initial payment and shipping settings",
-            "Basic training for using the admin panel",
-        ],
-        featured: false,
-    },
-    {
-        title: "Intermediate Plan",
-        url: "intermediate",
-        price: "Starting from $1500",
-        description: [
-            "Custom template design or editing pre-made templates",
-            "Adding up to 50 products",
-            "Multi-language support",
-            "Adding product pages and additional pages",
-            "Installing Shopify apps and tools",
-        ],
-        featured: true,
-    },
-    {
-        title: "Advanced Plan",
-        url: "advanced",
-        price: "Custom Pricing",
-        description: [
-            "Fully custom design from scratch",
-            "Adding up to 200 products",
-            "Customizing store pages and product pages",
-            "Installing business-specific apps and tools",
-            "Search Engine Optimization (SEO)",
-        ],
-        featured: false,
-    },
+  {
+    title: "Basic Plan",
+    url: "basic",
+    price: "Starting from €990",
+    shortDescription: "Clean, launch-ready Shopify store for small businesses",
+    badge: "Best for starters",
+    deliveryTime: "5–7 days",
+
+    idealFor: [
+      "Startups",
+      "Small businesses",
+      "Simple product stores"
+    ],
+
+    features: [
+      "Full Shopify store setup and configuration",
+      "Professional theme customization aligned with your brand",
+      "Up to 15 products added",
+      "Payment and shipping setup",
+      "Clean homepage and navigation structure",
+      "Mobile-friendly design",
+      "Basic admin training"
+    ],
+
+    benefits: [
+      "Launch your store quickly without unnecessary complexity",
+      "Clean and structured foundation",
+      "Ready for future growth"
+    ],
+
+    outcomes: [
+      "A fully functional Shopify store",
+      "A clean and professional design",
+      "A store ready to start selling",
+      "Confidence to manage your store"
+    ],
+
+    limitations: [
+      "Up to 15 products",
+      "Limited advanced features",
+      "Up to 2 revisions",
+      "Limited support after launch"
+    ],
+
+    featured: false,
+  },
+
+  {
+    title: "Intermediate Plan",
+    url: "intermediate",
+    price: "Starting from €1490",
+    shortDescription: "Flexible and scalable Shopify store for growing businesses",
+    badge: "Most Popular",
+    deliveryTime: "7–12 days",
+
+    idealFor: [
+      "Growing brands",
+      "Stores with larger catalogs",
+      "Businesses targeting international customers"
+    ],
+
+    features: [
+      "Advanced Shopify setup and store structure",
+      "Enhanced theme customization for flexibility",
+      "Up to 50 products added",
+      "Multi-currency setup",
+      "Custom pages (About, Contact, Blog)",
+      "Improved navigation and basic product filtering",
+      "Integration of essential Shopify apps (reviews, email, SEO)",
+      "Mobile-friendly optimized layout"
+    ],
+
+    benefits: [
+      "More flexibility compared to the basic plan",
+      "Built to support business growth",
+      "Improved user experience for customers"
+    ],
+
+    outcomes: [
+      "A scalable Shopify store ready for growth",
+      "Improved user experience and navigation",
+      "A store capable of handling larger product catalogs",
+      "Better foundation for future optimization"
+    ],
+
+    limitations: [
+      "Up to 50 products",
+      "Advanced custom features may require additional cost",
+      "Extended support not included"
+    ],
+
+    featured: true,
+  },
+
+  {
+    title: "Advanced Plan",
+    url: "advanced",
+    price: "Custom Pricing",
+    shortDescription: "Fully customized Shopify solution for serious businesses",
+    badge: "Custom Solution",
+    deliveryTime: "2–4 weeks",
+
+    idealFor: [
+      "Established brands",
+      "High-volume stores",
+      "Businesses requiring custom functionality"
+    ],
+
+    features: [
+      "Fully custom Shopify store design from scratch",
+      "Scalable architecture for large product catalogs",
+      "Advanced customization of pages and user experience",
+      "Integration of business-specific tools and automations",
+      "Performance and speed optimization",
+      "Advanced analytics and tracking setup",
+      "Conversion-ready foundation"
+    ],
+
+    benefits: [
+      "Fully tailored to your business needs",
+      "Optimized for performance and scalability",
+      "Built for serious growth and revenue"
+    ],
+
+    outcomes: [
+      "A fully customized Shopify experience",
+      "High-performance and scalable store architecture",
+      "Advanced tracking and business insights",
+      "A store optimized for long-term growth"
+    ],
+
+    limitations: [
+      "Pricing depends on project scope",
+      "Timeline varies based on complexity"
+    ],
+
+    featured: false,
+  },
 ];
 
 const projects = [
@@ -150,4 +249,451 @@ const projects = [
     
 ];
 
-export { projects, pricingData };
+const services = [
+  {
+  slug: "conversion-audit-strategy",
+
+  hero: {
+    title: "Conversion Audit & Strategy",
+    subtitle: "Turn insights into a clear growth plan",
+    ctaPrimary: "Get Free Audit"
+  },
+
+  problem: [
+    "Traffic is not converting",
+    "No clear optimization strategy",
+    "Random changes with no results"
+  ],
+
+  solution: [
+    "Deep conversion analysis",
+    "User journey breakdown",
+    "Prioritized testing plan",
+    "Strategic roadmap"
+  ],
+
+  includes: [
+    "Full funnel audit",
+    "User behavior analysis",
+    "A/B testing roadmap",
+    "Conversion strategy document"
+  ],
+
+  process: [
+    "Analyze data",
+    "Find leaks",
+    "Build strategy",
+    "Prioritize actions"
+  ],
+
+  idealFor: [
+    "Stores with stable traffic",
+    "Scaling brands",
+    "Businesses serious about CRO"
+  ],
+
+  faq: [
+    {
+      q: "Is this implementation or just strategy?",
+      a: "This is strategy focused, implementation can be added later"
+    }
+  ],
+
+  positioning: "Strategy before execution",
+
+  finalCTA: {
+    title: "Build your conversion strategy",
+    button: "Get Free Audit"
+  }
+},{
+  slug: "analytics-tracking-setup",
+
+  hero: {
+    title: "Analytics & Tracking Setup",
+    subtitle: "Track what actually matters for growth",
+    ctaPrimary: "Get Free Audit"
+  },
+
+  problem: [
+    "You don’t trust your data",
+    "Missing key conversion events",
+    "No clear performance visibility"
+  ],
+
+  solution: [
+    "Accurate tracking setup",
+    "Event tracking",
+    "Data validation",
+    "Clear reporting structure"
+  ],
+
+  includes: [
+    "GA4 setup",
+    "Enhanced ecommerce tracking",
+    "Custom event tracking",
+    "Basic dashboard setup"
+  ],
+
+  process: [
+    "Setup tracking",
+    "Configure events",
+    "Test accuracy",
+    "Deliver tracking system"
+  ],
+
+  idealFor: [
+    "All Shopify stores",
+    "Marketing focused brands",
+    "Data driven businesses"
+  ],
+
+  faq: [
+    {
+      q: "Will I see real data immediately?",
+      a: "Yes, tracking starts immediately after setup"
+    }
+  ],
+
+  positioning: "Better data = better decisions",
+
+  finalCTA: {
+    title: "Fix your tracking setup",
+    button: "Get Free Audit"
+  }
+},{
+  slug: "google-ads-setup-optimization",
+
+  hero: {
+    title: "Google Ads Setup & Optimization",
+    subtitle: "Turn ad spend into profitable revenue",
+    ctaPrimary: "Get Free Audit"
+  },
+
+  problem: [
+    "Spending money without results",
+    "Low ROAS",
+    "Poor targeting and structure"
+  ],
+
+  solution: [
+    "Campaign structure optimization",
+    "Audience targeting",
+    "Ad performance improvements",
+    "Continuous optimization"
+  ],
+
+  includes: [
+    "Campaign setup",
+    "Keyword research",
+    "Ad creation",
+    "Conversion tracking setup"
+  ],
+
+  process: [
+    "Research",
+    "Setup campaigns",
+    "Launch",
+    "Optimize performance"
+  ],
+
+  idealFor: [
+    "Stores ready to scale",
+    "Businesses with budget",
+    "Growth focused brands"
+  ],
+
+  faq: [
+    {
+      q: "Do you manage ads long term?",
+      a: "Yes, ongoing optimization is available"
+    }
+  ],
+
+  positioning: "Ads focused on profit, not clicks",
+
+  finalCTA: {
+    title: "Launch profitable campaigns",
+    button: "Get Free Audit"
+  }
+},
+  {
+    slug: "shopify-store-development",
+
+    hero: {
+      title: "Build a Shopify Store That Converts",
+      subtitle: "Conversion focused store built for growth",
+      ctaPrimary: "Get Free Audit",
+      ctaSecondary: "Start Your Store"
+    },
+
+    problem: [
+      "Store looks good but doesn’t sell",
+      "No structure or funnel",
+      "Slow or poorly built theme"
+    ],
+
+    solution: [
+      "Conversion focused layout",
+      "Clean and fast development",
+      "Mobile first design",
+      "Product page structure"
+    ],
+
+    includes: [
+      "Homepage structure",
+      "Product page optimization",
+      "Cart and checkout improvements",
+      "Basic speed optimization",
+      "Essential apps setup"
+    ],
+
+    process: [
+      "Strategy",
+      "Structure",
+      "Build",
+      "Launch"
+    ],
+
+    idealFor: [
+      "New brands",
+      "Businesses moving to Shopify",
+      "Stores needing rebuild"
+    ],
+
+    faq: [
+      {
+        q: "How long does it take?",
+        a: "Usually 7 to 12 days"
+      },
+      {
+        q: "Do you offer CRO after?",
+        a: "Yes, stores are built ready for CRO"
+      }
+    ],
+
+    positioning: "Built with CRO in mind from day one",
+
+    finalCTA: {
+      title: "Start your Shopify store",
+      button: "Get Free Audit"
+    }
+  },
+
+  {
+    slug: "cro-optimization",
+
+    hero: {
+      title: "Increase Conversion Rate Without More Traffic",
+      subtitle: "Turn existing traffic into more revenue",
+      ctaPrimary: "Get Free Audit"
+    },
+
+    problem: [
+      "High traffic but low sales",
+      "Low conversion rate",
+      "Users drop before checkout"
+    ],
+
+    solution: [
+      "Funnel analysis",
+      "UX improvements",
+      "A/B testing",
+      "Data driven decisions"
+    ],
+
+    includes: [
+      "Product page optimization",
+      "Cart optimization",
+      "Checkout improvements",
+      "Heatmaps and session analysis"
+    ],
+
+    process: [
+      "Audit",
+      "Identify leaks",
+      "Test",
+      "Scale winners"
+    ],
+
+    idealFor: [
+      "Stores with traffic",
+      "Low conversion stores",
+      "Scaling businesses"
+    ],
+
+    faq: [
+      {
+        q: "Do you guarantee results?",
+        a: "Focus is on measurable improvement, not guesswork"
+      }
+    ],
+
+    positioning: "Focused on revenue, not vanity metrics",
+
+    finalCTA: {
+      title: "Increase your store revenue",
+      button: "Get Free Audit"
+    }
+  },
+
+  {
+    slug: "speed-optimization",
+
+    hero: {
+      title: "Make Your Shopify Store Fast",
+      subtitle: "Speed that improves conversion and SEO",
+      ctaPrimary: "Get Free Audit"
+    },
+
+    problem: [
+      "Slow loading pages",
+      "High bounce rate",
+      "Poor mobile performance"
+    ],
+
+    solution: [
+      "Code optimization",
+      "Image optimization",
+      "App cleanup",
+      "Theme performance fixes"
+    ],
+
+    includes: [
+      "Core Web Vitals improvement",
+      "Lazy loading",
+      "Script optimization",
+      "Speed audit"
+    ],
+
+    process: [
+      "Audit",
+      "Fix bottlenecks",
+      "Optimize assets",
+      "Test performance"
+    ],
+
+    idealFor: [
+      "Slow stores",
+      "Mobile heavy traffic",
+      "SEO focused stores"
+    ],
+
+    faq: [],
+
+    positioning: "Speed directly impacts revenue",
+
+    finalCTA: {
+      title: "Speed up your store",
+      button: "Get Free Audit"
+    }
+  },
+
+  {
+    slug: "email-marketing",
+
+    hero: {
+      title: "Set Up Email Marketing That Drives Sales",
+      subtitle: "Automations that recover and increase revenue",
+      ctaPrimary: "Get Free Audit"
+    },
+
+    problem: [
+      "No email strategy",
+      "Lost abandoned carts",
+      "Low repeat purchases"
+    ],
+
+    solution: [
+      "Flows setup",
+      "Segmentation",
+      "Campaign strategy",
+      "Retention optimization"
+    ],
+
+    includes: [
+      "Abandoned cart flow",
+      "Welcome flow",
+      "Post purchase flow",
+      "Basic campaigns"
+    ],
+
+    process: [
+      "Setup",
+      "Automations",
+      "Optimization"
+    ],
+
+    idealFor: [
+      "Growing stores",
+      "Stores with traffic",
+      "Retention focused brands"
+    ],
+
+    faq: [],
+
+    positioning: "Email is your highest ROI channel",
+
+    finalCTA: {
+      title: "Start email marketing",
+      button: "Get Free Audit"
+    }
+  } ,
+  {
+  slug: "shopify-store-audit",
+
+  hero: {
+    title: "Comprehensive Shopify Store Audit",
+    subtitle: "Discover exactly what's holding your store back",
+    ctaPrimary: "Get Free Audit"
+  },
+
+  problem: [
+    "You don’t know why sales are low",
+    "No clear performance insights",
+    "Hidden issues killing conversion"
+  ],
+
+  solution: [
+    "Full store analysis",
+    "Conversion bottleneck detection",
+    "Performance review",
+    "Actionable recommendations"
+  ],
+
+  includes: [
+    "Homepage and product page review",
+    "Conversion funnel analysis",
+    "Speed and technical audit",
+    "Revenue opportunity breakdown"
+  ],
+
+  process: [
+    "Audit",
+    "Analyze",
+    "Identify issues",
+    "Deliver report"
+  ],
+
+  idealFor: [
+    "Existing Shopify stores",
+    "Stores with traffic but low sales",
+    "Businesses needing clarity"
+  ],
+
+  faq: [
+    {
+      q: "What will I receive?",
+      a: "A clear report with prioritized action steps"
+    }
+  ],
+
+  positioning: "Clarity before you invest in changes",
+
+  finalCTA: {
+    title: "Find out what’s blocking your growth",
+    button: "Get Free Audit"
+  }
+}
+];
+
+export { projects, pricingData , services };

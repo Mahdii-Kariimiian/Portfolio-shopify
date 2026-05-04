@@ -14,6 +14,7 @@ import Order from "./pages/Order";
 import BasicPlan from "./components/BasicPlan";
 import IntermediatePlan from "./components/IntermediatePlan";
 import AdvancedPlan from "./components/advancedPlan";
+import ServiceDetail from "./components/ServiceDetail";
 
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -79,6 +80,12 @@ function App() {
                                     path="/order/advanced"
                                     element={
                                         <AdvancedPlan isDarkMode={isDarkMode} />
+                                    }
+                                />
+                                <Route
+                                    path="/services/:slug"
+                                    element={
+                                        <ServiceDetail isDarkMode={isDarkMode} />
                                     }
                                 />
                             </Routes>

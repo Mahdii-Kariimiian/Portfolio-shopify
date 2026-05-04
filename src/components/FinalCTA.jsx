@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { HiArrowRight, HiCheckCircle } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 
 export default function FinalCTA({ isDarkMode }) {
     const { t, language } = useLanguage();
@@ -8,21 +9,49 @@ export default function FinalCTA({ isDarkMode }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    useEffect(() => {
+        // Initialize EmailJS
+        emailjs.init({
+            publicKey: "mV9rGASfViXLoUkhx",
+        });
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!storeUrl.trim()) return;
 
         setIsSubmitting(true);
         
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setStoreUrl("");
-        
-        // Reset after 3 seconds
-        setTimeout(() => setIsSubmitted(false), 3000);
+        try {
+            const response = await emailjs.send(
+                "service_xm5pbcm",
+                "template_bqcniev",
+                {
+                    name: "Store Analysis Request",
+                    email: "Not provided",
+                    website: storeUrl,
+                    message: "Store analysis request from final CTA",
+                    businessType: "Store Analysis",
+                    productsCount: "N/A",
+                    businessModel: "N/A",
+                    dropshipping: "N/A",
+                    projectTime: "N/A",
+                    budget: "N/A"
+                }
+            );
+
+            if (response.status === 200) {
+                setIsSubmitted(true);
+                setStoreUrl("");
+            } else {
+                // Handle error
+                console.error('EmailJS error:', response);
+            }
+        } catch (error) {
+            console.error('EmailJS error:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -103,18 +132,12 @@ export default function FinalCTA({ isDarkMode }) {
                             <p className={`text-sm ${
                                 isDarkMode ? "text-green-200" : "text-green-700"
                             }`}>
-                                I'll analyze your store and get back to you within 24 hours with actionable insights.
+                                 {t('finalCTA.subtitle')}
                             </p>
                         </div>
                     )}
 
-                    
-                    <div className={`mt-3 text-sm ${
-                        isDarkMode ? "text-gray-400" : "text-gray-500"
-                    }`}>
-                        <p>{t('finalCTA.note')}</p>
-                    </div>
-
+                
                     {/* Trust Indicators */}
                     <div className={`mt-8 pt-4 border-t ${
                         isDarkMode ? "border-gray-700" : "border-gray-200"
