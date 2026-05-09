@@ -3,7 +3,7 @@ import React from "react";
 const PricingCard = ({ title, price, features, isDarkMode }) => {
     return (
         <div
-            className={`group relative border rounded-2xl transition-all duration-300 hover:scale-[1.02] cursor-default p-6 flex flex-col items-center max-md:max-w-96 ${
+            className={`group relative border rounded-2xl transition-all duration-300 hover:scale-105 cursor-default p-6 flex flex-col items-center max-md:max-w-96 ${
                 isDarkMode
                     ? "bg-dark-surface/60 hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40"
                     : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"

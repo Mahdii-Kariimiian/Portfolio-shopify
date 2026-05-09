@@ -91,7 +91,7 @@ const Contact = ({ isDarkMode }) => {
     };
 
     const getButtonClasses = () => {
-        return `w-full px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-[1.02] ${
+        return `w-full px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 ${
             isSubmitting
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-green-700 hover:bg-green-600 text-white hover:shadow-lg"

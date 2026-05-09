@@ -78,7 +78,7 @@ export default function FinalCTA({ isDarkMode }) {
 
                     {!isSubmitted ? (
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className={`flex flex-col sm:flex-row gap-0 w-full rounded-2xl overflow-hidden shadow-lg border ${
+                            <div className={`flex flex-col sm:flex-row gap-0 w-full rounded-full overflow-hidden shadow-lg border ${
                                 isDarkMode 
                                     ? "border-dark-border/50" 
                                     : "border-gray-200/50"
@@ -98,7 +98,7 @@ export default function FinalCTA({ isDarkMode }) {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting || !storeUrl.trim()}
-                                    className={`inline-flex items-center justify-center space-x-2 px-8 py-4 text-lg font-semibold transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-w-[180px]`}
+                                    className={`inline-flex items-center justify-center space-x-2 px-8 py-4 text-lg font-semibold transition-all duration-200 transform hover:scale-105 bg-green-700 hover:bg-green-600 text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-w-[180px]`}
                                 >
                                     {isSubmitting ? (
                                         <span className="flex items-center space-x-2">

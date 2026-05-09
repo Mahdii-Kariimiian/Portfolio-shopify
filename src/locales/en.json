@@ -9,6 +9,10 @@
     },
     "projects": "Projects", 
     "contact": "Contact",
+    "plans": "Plans",
+    "basicPlan": "Basic Plan",
+    "intermediatePlan": "Intermediate Plan",
+    "advancedPlan": "Advanced Plan",
     "freeAudit": "Get Free Audit"
   },
   "hero": {

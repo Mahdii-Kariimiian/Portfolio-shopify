@@ -24,7 +24,7 @@ export default function Results({ isDarkMode }) {
                     {t('results.metrics').map((metric, index) => (
                         <div
                             key={index}
-                            className={`text-center p-4 rounded-2xl transition-all duration-300 hover:scale-[1.02] cursor-default ${
+                            className={`text-center p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-default ${
                                 isDarkMode 
                                     ? "bg-dark-surface hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40" 
                                     : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"

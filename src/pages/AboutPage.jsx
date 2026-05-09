@@ -125,13 +125,13 @@ export default function AboutPage({ isDarkMode }) {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
-                            <div key={index} className={`group relative p-6 rounded-2xl transition-all duration-300 hover:scale-[1.02] cursor-default ${
+                            <div key={index} className={`group relative p-6 rounded-2xl transition-all duration-300 hover:scale-105 cursor-default ${
                                 isDarkMode 
                                     ? "bg-dark-surface/60 hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40" 
                                     : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"
                             }`}>
                                 <div className="flex items-center space-x-4">
-                                    <div className={`flex items-center justify-center w-16 h-16 rounded-2xl transition-all duration-300 group-hover:scale-110 ${
+                                    <div className={`flex items-center justify-center w-16 h-16 rounded-2xl transition-all duration-300 group-hover:scale-105 ${
                                         isDarkMode 
                                             ? "bg-green-700/10 text-green-700" 
                                             : "bg-green-700/10 text-green-700"
@@ -212,15 +212,15 @@ export default function AboutPage({ isDarkMode }) {
                             }
                         ].map((step, index) => (
                             <div key={index} className="relative">
-                                <div className={`group relative p-6 rounded-2xl h-full transition-all duration-300 hover:scale-[1.02] cursor-default ${
+                                <div className={`group relative p-6 rounded-2xl h-full transition-all duration-300 hover:scale-105 cursor-default ${
                                     isDarkMode 
                                         ? "bg-dark-surface/60 hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40" 
                                         : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"
                                 }`}>
                                     <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-5 transition-all duration-300 ${
                                         isDarkMode 
-                                            ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110" 
-                                            : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110"
+                                            ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105" 
+                                            : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105"
                                     }`}>
                                         {icons[index]}
                                     </div>
@@ -270,43 +270,21 @@ export default function AboutPage({ isDarkMode }) {
                 </div>
             </section>
 
-            {/* Proof Section */}
-            <section className="py-10 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto">
-                    <div className={`p-8 rounded-2xl ${
-                        isDarkMode 
-                            ? "bg-dark-surface/60 border border-dark-border/50" 
-                            : "bg-white/90 border border-gray-200/60 backdrop-blur-sm"
-                    }`}>
-                        <h2 className={`text-2xl sm:text-3xl font-semibold mb-6 text-center ${
-                            isDarkMode ? "text-white" : "text-gray-900"
-                        }`}>
-                            Proof
-                        </h2>
-                        <p className={`text-lg leading-relaxed text-center ${
-                            isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
-                        }`}>
-                            I've worked on multiple Shopify stores where the focus was not just design, but measurable results.
-                        </p>
-                        <p className={`text-lg leading-relaxed text-center mt-2 ${
-                            isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
-                        }`}>
-                            From improving page speed to optimizing product pages and checkout flow, my work is always tied to real business impact.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* Skills Section */}
             <section className="py-10 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className={`text-2xl sm:text-3xl font-semibold mb-8 text-center ${
+                <div className="max-w-7xl mx-auto">
+                    <h2 className={`text-2xl sm:text-3xl font-semibold mb-6 text-center ${
                         isDarkMode ? "text-white" : "text-gray-900"
                     }`}>
                         Skills / Tech
                     </h2>
+                    <p className={`text-lg leading-relaxed text-center mb-8 max-w-3xl mx-auto ${
+                        isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
+                    }`}>
+                        I work with a focused stack of technologies and tools specifically chosen for building high-performance Shopify stores that drive conversions and scale with your business.
+                    </p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                         {Object.entries(skills).map(([category, categorySkills], categoryIndex) => (
                             <div key={categoryIndex} className={`p-6 rounded-2xl ${
                                 isDarkMode 
@@ -338,27 +316,6 @@ export default function AboutPage({ isDarkMode }) {
                 </div>
             </section>
 
-            {/* Personal Section */}
-            <section className="py-10 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className={`text-2xl sm:text-3xl font-semibold mb-6 text-center ${
-                        isDarkMode ? "text-white" : "text-gray-900"
-                    }`}>
-                        Personal
-                    </h2>
-                    <div className={`text-center space-y-4 max-w-3xl mx-auto ${
-                        isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
-                    }`}>
-                        <p className="text-lg leading-relaxed">
-                            I'm a front end developer focused on building high performance Shopify experiences.
-                        </p>
-                        <p className="text-lg leading-relaxed">
-                            I care about clean code, fast loading, and creating stores that actually drive revenue.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* CTA Section */}
             <section className="py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
@@ -381,7 +338,7 @@ export default function AboutPage({ isDarkMode }) {
 
                         <a
                             href="#final-cta"
-                            className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white`}
+                            className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-105 bg-green-700 text-white`}
                         >
                             <span>Get In Touch</span>
                             <HiArrowRight />

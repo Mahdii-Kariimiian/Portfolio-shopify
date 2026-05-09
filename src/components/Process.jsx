@@ -48,15 +48,15 @@ export default function Process({ isDarkMode }) {
                         <div key={index} className="relative">
                             
                             {/* Step Content */}
-                            <div className={`group relative p-6 rounded-2xl h-full transition-all duration-300 hover:scale-[1.02] cursor-default ${
+                            <div className={`group relative p-6 rounded-2xl h-full transition-all duration-300 hover:scale-105 cursor-default ${
                                 isDarkMode 
                                     ? "bg-dark-surface/60 hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40" 
                                     : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"
                             }`}>
                                 <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-5 transition-all duration-300 ${
                                     isDarkMode 
-                                        ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110" 
-                                        : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110"
+                                        ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105" 
+                                        : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105"
                                 }`}>
                                     {icons[index]}
                                 </div>

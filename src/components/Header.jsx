@@ -67,6 +67,54 @@ const Header = ({ isDarkMode, setIsDarkMode, isMenuOpen, setIsMenuOpen }) => {
                         {t('header.projects')}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
+                    {/* Plans Dropdown */}
+                    <div className="relative group">
+                        <button className={`text-sm font-medium relative group transition-all duration-300 flex items-center space-x-1 ${
+                            isDarkMode ? "text-dark-text-primary" : "text-black"
+                        }`}>
+                            {t('header.plans')}
+                            <svg className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
+                        </button>
+                        
+                        {/* Dropdown Menu */}
+                        <div className={`absolute top-full left-0 mt-3 w-48 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-xl ${
+                            isDarkMode ? "bg-dark-surface border-dark-border" : "bg-white/95 border border-gray-200"
+                        }`}>
+                            <Link
+                                to="/order/basic"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 rounded-t-xl ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                {t('header.basicPlan')}
+                            </Link>
+                            <Link
+                                to="/order/intermediate"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                {t('header.intermediatePlan')}
+                            </Link>
+                            <Link
+                                to="/order/advanced"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 rounded-b-xl ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                {t('header.advancedPlan')}
+                            </Link>
+                        </div>
+                    </div>
                     <Link
                         to="/contact"
                         className="text-sm font-medium relative group transition-all duration-300"

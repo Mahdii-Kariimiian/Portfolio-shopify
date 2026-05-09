@@ -78,17 +78,17 @@ const IntermediatePlan = ({ isDarkMode }) => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
                             href="/order"
-                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] ${
+                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-105 ${
                                 isDarkMode
-                                    ? "border-2 border-gray-600 text-gray-300 hover:border-green-700 hover:text-green-700"
-                                    : "border-2 border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700"
+                                    ? "border-2 border-gray-600 text-gray-300 hover:scale-105"
+                                    : "border-2 border-gray-300 text-gray-700 hover:scale-105"
                             }`}
                         >
                             Get Free Audit
                         </a>
                         <a
                             href="/order"
-                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white hover:shadow-lg`}
+                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-105 bg-green-700 text-white hover:shadow-lg`}
                         >
                             Start Your Store
                             <FaRocket className="w-4 h-4" />
@@ -293,7 +293,7 @@ const IntermediatePlan = ({ isDarkMode }) => {
                         </p>
                         <a
                             href="/order"
-                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white hover:shadow-lg`}
+                            className={`inline-flex items-center space-x-2 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-200 transform hover:scale-105 bg-green-700 text-white hover:shadow-lg`}
                         >
                             Get Free Audit
                         </a>

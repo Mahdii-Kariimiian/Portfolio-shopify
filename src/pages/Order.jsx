@@ -117,9 +117,7 @@ const handleSubmit = async (e) => {
                     return (
                         <div
                             key={card.title}
-                            className={`relative max-md:m-auto transition-all duration-300 hover:scale-[1.02] cursor-pointer ${
-                                isFeatured ? 'scale-105 z-10' : ''
-                            }`}
+                            className={`relative max-md:m-auto transition-all duration-300 hover:scale-105 cursor-pointer`}
                             onClick={() => handlePlanSelect(card)}
                         >
                             {isFeatured && (
@@ -255,7 +253,7 @@ const handleSubmit = async (e) => {
                                         type="button"
                                         onClick={handleNextStep}
                                         disabled={!formData.from_name || !formData.from_email}
-                                        className={`w-full px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-[1.02] ${
+                                        className={`w-full px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 ${
                                             !formData.from_name || !formData.from_email
                                                 ? "bg-gray-400 cursor-not-allowed"
                                                 : "bg-green-700 hover:bg-green-600 text-white hover:shadow-lg"
@@ -454,7 +452,7 @@ const handleSubmit = async (e) => {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting || !formData.goal || !formData.budget}
-                                            className={`flex-1 px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-[1.02] ${
+                                            className={`flex-1 px-6 py-4 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 ${
                                                 isSubmitting || !formData.goal || !formData.budget
                                                     ? "bg-gray-400 cursor-not-allowed"
                                                     : "bg-green-700 hover:bg-green-600 text-white hover:shadow-lg"

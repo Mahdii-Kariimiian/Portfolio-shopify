@@ -26,7 +26,7 @@ const ProjectCard = ({ project, isDarkMode }) => {
     };
 
     return (
-        <Link to={`/projects/${project.id}`} className={`group relative rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] cursor-pointer h-full flex flex-col justify-between ${
+        <Link to={`/projects/${project.id}`} className={`group relative rounded-3xl overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer h-full flex flex-col justify-between ${
             isDarkMode
                 ? "bg-dark-surface/60 hover:bg-dark-surface/90 border border-dark-border/50 hover:border-green-700/40"
                 : "bg-white/90 hover:bg-white border border-gray-200/60 hover:border-green-700/40 backdrop-blur-sm"

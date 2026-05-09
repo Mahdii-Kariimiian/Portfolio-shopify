@@ -44,7 +44,7 @@ export default function HeroSection({ isDarkMode }) {
                             <div className="flex flex-col items-center">
                                 <a
                                     href="#final-cta"
-                                    className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white`}
+                                    className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-105 bg-green-700 text-white`}
                                 >
                                     {t('hero.primaryCTA')}
                                     <HiArrowNarrowRight />
@@ -53,11 +53,11 @@ export default function HeroSection({ isDarkMode }) {
                             </div>
                             
                             <a
-                                href="#case-studies"
-                                className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] ${
+                                href="/projects"
+                                className={`inline-flex items-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-105 ${
                                     isDarkMode
-                                        ? "border-2 border-gray-600 text-gray-300 hover:border-green-700 hover:text-green-700"
-                                        : "border-2 border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700"
+                                        ? "border-2 border-gray-600 text-gray-300"
+                                        : "border-2 border-gray-300 text-gray-700"
                                 }`}
                             >
                                 {t('hero.secondaryCTA')}
@@ -110,18 +110,18 @@ export default function HeroSection({ isDarkMode }) {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4 w-full max-w-sm mx-auto">
                         <a
                             href="#final-cta"
-                            className={`w-full inline-flex items-center justify-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] bg-green-700 hover:bg-green-600 text-white`}
+                            className={`w-full inline-flex items-center justify-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-105 bg-green-700 text-white`}
                         >
                             {t('hero.primaryCTA')}
                             <HiArrowNarrowRight />
                         </a>
                         
                         <a
-                            href="#case-studies"
-                            className={`w-full inline-flex items-center justify-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-[1.02] ${
+                            href="/projects"
+                            className={`w-full inline-flex items-center justify-center space-x-2 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-200 transform hover:scale-105 ${
                                 isDarkMode
-                                    ? "border-2 border-gray-600 text-gray-300 hover:border-green-700 hover:text-green-700"
-                                    : "border-2 border-gray-300 text-gray-700 hover:border-green-700 hover:text-green-700"
+                                    ? "border-2 border-gray-600 text-gray-300"
+                                    : "border-2 border-gray-300 text-gray-700"
                             }`}
                         >
                             {t('hero.secondaryCTA')}
@@ -153,10 +153,11 @@ export default function HeroSection({ isDarkMode }) {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {caseStudiesData.slice(0, 4).map((project) => (
+                    {caseStudiesData.slice(0, 4).map((project, index) => (
                         <HeroProjectCard
                             key={project.id}
                             project={project}
+                            index={index}
                             isDarkMode={isDarkMode}
                         />
                     ))}

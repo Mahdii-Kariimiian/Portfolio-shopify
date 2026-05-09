@@ -1,12 +1,57 @@
 import { Link } from "react-router-dom";
 import { FaShopify } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { services } from "../../db/db";
 import FooterColumn from "./FooterColumn";
 import FooterLink from "./FooterLink";
 import SocialIcons from "./SocialIcons";
 
 const Footer = ({ isDarkMode }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  // Shortened service titles for footer
+  const shortenedServiceTitles = {
+    "conversion-audit-strategy": {
+      en: "Conversion Audit & Strategy",
+      it: "Audit Conversione & Strategia",
+      fa: "بررسی تبدیل و استراتژی"
+    },
+    "analytics-tracking-setup": {
+      en: "Analytics & Tracking Setup",
+      it: "Analytics & Tracciamento",
+      fa: "آنالیز و ردیابی"
+    },
+    "google-ads-setup-optimization": {
+      en: "Google Ads Setup",
+      it: "Setup Google Ads",
+      fa: "تنظیمات گوگل ادز"
+    },
+    "shopify-store-development": {
+      en: "Build Shopify Store",
+      it: "Crea Shopify Store",
+      fa: "ساخت فروشگاه شاپیفای"
+    },
+    "cro-optimization": {
+      en: "Increase Conversion Rate",
+      it: "Aumenta Tasso Conversione",
+      fa: "افزایش نرخ تبدیل"
+    },
+    "speed-optimization": {
+      en: "Speed Optimization",
+      it: "Ottimizzazione Velocità",
+      fa: "بهینه‌سازی سرعت"
+    },
+    "email-marketing": {
+      en: "Email Marketing Setup",
+      it: "Setup Email Marketing",
+      fa: "تنظیمات ایمیل مارکتینگ"
+    },
+    "shopify-store-audit": {
+      en: "Shopify Store Audit",
+      it: "Audit Shopify Store",
+      fa: "بررسی فروشگاه شاپیفای"
+    }
+  };
 
   return (
     <footer className={`w-full py-12 md:px-10 px-4 mt-12 ${
@@ -35,7 +80,7 @@ const Footer = ({ isDarkMode }) => {
               </p>
               <Link
                 to="/order"
-                className="inline-block bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-800 transition-colors duration-200"
+                className="inline-block bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105"
               >
                 {t('footer.brand.cta')}
               </Link>
@@ -56,13 +101,16 @@ const Footer = ({ isDarkMode }) => {
           {/* Services Column */}
           <FooterColumn title={t('footer.services.title')}>
             <div className="flex flex-col gap-y-2">
-              {Array.isArray(t('footer.services.items')) ? t('footer.services.items').map((service, index) => (
-                <div key={index} className={`text-sm ${
-                  isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
-                }`}>
-                  {service}
-                </div>
-              )) : null}
+              {services.map((service) => {
+                const titleMap = shortenedServiceTitles[service.slug];
+                const shortTitle = titleMap ? titleMap[language] || titleMap.en : service.hero.title;
+                
+                return (
+                  <FooterLink key={service.slug} href={`/services/${service.slug}`}>
+                    {shortTitle}
+                  </FooterLink>
+                );
+              })}
             </div>
           </FooterColumn>
 

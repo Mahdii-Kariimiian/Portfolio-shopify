@@ -144,6 +144,39 @@ const MobileMenuOverlay = ({ isOpen, onClose, isDarkMode, setIsDarkMode }) => {
             >
               {t('header.projects')}
             </Link>
+            {/* Plans Dropdown for Mobile */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLanguageDropdownOpen(false)} // Close language dropdown if open
+                className="flex items-center space-x-2 text-xl font-medium hover:text-green-700 transition-colors duration-200"
+              >
+                {t('header.plans')}
+                <HiChevronDown className="w-4 h-4" />
+              </button>
+              <div className="mt-2 ml-4 space-y-2">
+                <Link
+                  to="/order/basic"
+                  className="block text-lg font-medium hover:text-green-700 transition-colors duration-200 pl-4"
+                  onClick={onClose}
+                >
+                  {t('header.basicPlan')}
+                </Link>
+                <Link
+                  to="/order/intermediate"
+                  className="block text-lg font-medium hover:text-green-700 transition-colors duration-200 pl-4"
+                  onClick={onClose}
+                >
+                  {t('header.intermediatePlan')}
+                </Link>
+                <Link
+                  to="/order/advanced"
+                  className="block text-lg font-medium hover:text-green-700 transition-colors duration-200 pl-4"
+                  onClick={onClose}
+                >
+                  {t('header.advancedPlan')}
+                </Link>
+              </div>
+            </div>
             <Link
               to="/contact"
               className="block text-xl font-medium hover:text-green-700 transition-colors duration-200"

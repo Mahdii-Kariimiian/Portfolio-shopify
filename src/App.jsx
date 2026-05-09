@@ -17,7 +17,7 @@ import AdvancedPlan from "./components/advancedPlan";
 import ServiceDetail from "./components/ServiceDetail";
 
 function App() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (

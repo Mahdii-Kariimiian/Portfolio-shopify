@@ -9,6 +9,10 @@
     },
     "projects": "Progetti", 
     "contact": "Contatto",
+    "plans": "Piani",
+    "basicPlan": "Piano Base",
+    "intermediatePlan": "Piano Intermedio",
+    "advancedPlan": "Piano Avanzato",
     "freeAudit": "Audit Gratuito",
     "menu": "Menu"
   },

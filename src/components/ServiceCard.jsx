@@ -1,6 +1,5 @@
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { services } from "../db/db";
 
 const ServiceCard = ({ service, index, isDarkMode }) => {
     // Map service titles to slugs from services array in db
@@ -61,7 +60,7 @@ const ServiceCard = ({ service, index, isDarkMode }) => {
 
     return (
         <div
-            className={`group relative p-4 rounded-3xl transition-all duration-300 hover:scale-[1.02] cursor-default h-full flex flex-col justify-between ${
+            className={`group relative p-4 rounded-3xl transition-all duration-300 hover:scale-105 cursor-default h-full flex flex-col justify-between ${
                 service.featured
                     ? (isDarkMode
                         ? "bg-green-700/10 hover:bg-green-700/20 border-2 border-green-700/30 hover:border-green-700/50"
@@ -74,8 +73,8 @@ const ServiceCard = ({ service, index, isDarkMode }) => {
             {/* Icon in soft circle */}
             <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-5 transition-all duration-300 ${
                 isDarkMode
-                    ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110"
-                    : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-110"
+                    ? "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105"
+                    : "bg-green-700/10 text-green-700 group-hover:bg-green-700/20 group-hover:scale-105"
             }`}>
                 {getIcon(index)}
             </div>
@@ -104,11 +103,11 @@ const ServiceCard = ({ service, index, isDarkMode }) => {
                 className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                     service.featured
                         ? (isDarkMode
-                            ? "bg-green-700 text-white hover:bg-green-600"
-                            : "bg-green-700 text-white hover:bg-green-600")
+                            ? "bg-green-700 text-white hover:scale-105"
+                            : "bg-green-700 text-white hover:scale-105")
                         : (isDarkMode
-                            ? "bg-green-700/20 text-green-700 hover:bg-green-700/30"
-                            : "bg-green-700/10 text-green-700 hover:bg-green-700/20")
+                            ? "bg-green-700/20 text-green-700 hover:scale-105"
+                            : "bg-green-700/10 text-green-700 hover:scale-105")
                 }`}
             >
                 {service.cta || "View Details"}

@@ -46,8 +46,8 @@ const ServiceDetail = ({ isDarkMode }) => {
                             href="/order"
                             className={`px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
                                 isDarkMode
-                                    ? "bg-green-700 text-white hover:bg-green-600"
-                                    : "bg-green-700 text-white hover:bg-green-600"
+                                    ? "bg-green-700 text-white"
+                                    : "bg-green-700 text-white"
                             }`}
                         >
                             {service.hero.ctaPrimary}
@@ -56,7 +56,7 @@ const ServiceDetail = ({ isDarkMode }) => {
                             <a
                                 href="/order"
                                 className={`px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                                    isDarkMode ? "bg-white text-gray-900 hover:bg-gray-100" : "bg-gray-900 text-white hover:bg-gray-800"
+                                    isDarkMode ? "bg-white text-gray-900" : "bg-gray-900 text-white"
                                 }`}
                             >
                                 {service.hero.ctaSecondary}

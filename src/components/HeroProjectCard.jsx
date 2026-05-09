@@ -2,13 +2,13 @@ import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 
-const HeroProjectCard = ({ project, isDarkMode }) => {
+const HeroProjectCard = ({ project, isDarkMode, index }) => {
   const { t } = useLanguage();
   
   const metricsText = "+25% ↑ Conversion   •   40% Faster   •   3x ROI";
 
   return (
-    <div className={`group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] h-full flex flex-col ${
+    <div className={`group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 h-full flex flex-col ${
       project.isReal 
         ? (isDarkMode 
             ? "bg-dark-surface/60 border border-green-700/30 hover:border-green-700/60 hover:bg-green-700/5" 
@@ -22,7 +22,7 @@ const HeroProjectCard = ({ project, isDarkMode }) => {
         <img
           src={project.images.desktop[0]}
           alt={project.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         
         {/* Overlay */}
@@ -84,7 +84,7 @@ const HeroProjectCard = ({ project, isDarkMode }) => {
         {/* 5. CTA - Pushed to bottom */}
         <div className="mt-auto">
           <Link
-            to={`/projects/${project.id}`}
+            to={`/projects/${index + 1}`}
             className={`inline-flex items-center justify-center space-x-2 w-full px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
               project.isReal
                 ? (isDarkMode
