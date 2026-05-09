@@ -2,7 +2,7 @@ import { FaGlobe, FaSun, FaMoon } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import logo from "../assets/new-logo.png";
+import logo from "../assets/my logos/logo final.png";
 
 const Header = ({ isDarkMode, setIsDarkMode, isMenuOpen, setIsMenuOpen }) => {
     const { language, changeLanguage, t } = useLanguage();
