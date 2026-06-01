@@ -61,8 +61,8 @@ export default function FinalCTA({ isDarkMode }) {
             <div className="max-w-4xl mx-auto text-center">
                 <div className={`p-7 rounded-3xl ${
                     isDarkMode 
-                        ? "bg-gradient-to-br from-green-900/20 via-olive-green/10 to-dark-surface border border-green-700/20 shadow-2xl" 
-                        : "bg-gradient-to-br from-green-50 via-emerald-50 to-white border border-green-200/50 shadow-2xl"
+                        ? "bg-gradient-to-br from-green-800/30 via-emerald-700/20 to-green-900/40 border border-green-600/30 shadow-2xl backdrop-blur-sm" 
+                        : "bg-gradient-to-br from-green-200/90 via-emerald-100/95 to-lime-200/90 border border-green-400/50 shadow-2xl backdrop-blur-sm"
                 }`}>
                     <h2 className={`text-xl sm:text-2xl font-semibold mb-2 ${
                         isDarkMode ? "text-white" : "text-gray-900"
@@ -71,14 +71,14 @@ export default function FinalCTA({ isDarkMode }) {
                     </h2>
                     
                     <p className={`text-base sm:text-lg mb-4 ${
-                        isDarkMode ? "text-white/90" : "text-gray-600"
+                        isDarkMode ? "text-dark-text-secondary" : "text-gray-600"
                     }`}>
                         {t('finalCTA.subtitle')}
                     </p>
 
                     {!isSubmitted ? (
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className={`flex flex-col sm:flex-row gap-0 w-full rounded-full overflow-hidden shadow-lg border ${
+                            <div className={`mt-10 flex flex-col sm:flex-row gap-0 w-full rounded-[16px] overflow-hidden shadow-lg border ${
                                 isDarkMode 
                                     ? "border-dark-border/50" 
                                     : "border-gray-200/50"
@@ -113,13 +113,6 @@ export default function FinalCTA({ isDarkMode }) {
                                     )}
                                 </button>
                             </div>
-                            
-                            {/* Trust Element */}
-                            <p className={`text-xs ${
-                                isDarkMode ? "text-gray-400" : "text-gray-500"
-                            }`}>
-                                {t('finalCTA.trust')}
-                            </p>
                         </form>
                     ) : (
                         <div className={`p-6 rounded-2xl ${
@@ -144,7 +137,7 @@ export default function FinalCTA({ isDarkMode }) {
                     }`}>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                             <div className="space-y-3">
-                                <div className={`text-3xl font-bold ${
+                                <div className={`text-xl font-bold ${
                                     isDarkMode ? "text-green-400" : "text-green-600"
                                 }`}>
                                     5 Minutes
@@ -156,7 +149,7 @@ export default function FinalCTA({ isDarkMode }) {
                                 </div>
                             </div>
                             <div className="space-y-3">
-                                <div className={`text-3xl font-bold ${
+                                <div className={`text-xl font-bold ${
                                     isDarkMode ? "text-green-400" : "text-green-600"
                                 }`}>
                                     100% Free
@@ -168,7 +161,7 @@ export default function FinalCTA({ isDarkMode }) {
                                 </div>
                             </div>
                             <div className="space-y-3">
-                                <div className={`text-3xl font-bold ${
+                                <div className={`text-xl font-bold ${
                                     isDarkMode ? "text-green-400" : "text-green-600"
                                 }`}>
                                     Actionable

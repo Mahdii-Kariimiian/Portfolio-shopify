@@ -19,10 +19,10 @@ export default function HeroSection({ isDarkMode }) {
                     {/* Left Column: Content */}
                     <div className="text-left">
                         <div className="mb-6">
-                            <span className={`inline-block px-4 py-2 text-sm font-semibold rounded-full ${
+                            <span className={`inline-block px-4 py-2 text-sm font-semibold rounded-full border-2 ${
                                 isDarkMode 
-                                    ? "bg-green-700 text-white" 
-                                    : "bg-green-700 text-white"
+                                    ? "border-gray-600 text-gray-300" 
+                                    : "border-gray-300 text-gray-700"
                             }`}>
                                 {t('hero.expertise')}
                             </span>
@@ -84,7 +84,7 @@ export default function HeroSection({ isDarkMode }) {
                 {/* Mobile: Stack layout */}
                 <div className="lg:hidden">
                     {/* Headline */}
-                    <h1 className={`text-4xl sm:text-5xl font-bold mb-6 leading-tight text-center ${
+                    <h1 className={`text-3xl sm:text-4xl font-bold mb-6 leading-tight text-center ${
                         isDarkMode ? "!text-white" : "!text-gray-900"
                     }`}>
                         {t('hero.headline')}
@@ -138,7 +138,7 @@ export default function HeroSection({ isDarkMode }) {
             </div>
 
             {/* Project Showcase */}
-            <div className="mt-12">
+            <div className="mt-12 max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <h3 className={`text-2xl sm:text-3xl font-semibold mb-4 ${
                         isDarkMode ? "text-white" : "text-gray-900"

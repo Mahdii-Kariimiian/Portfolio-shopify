@@ -1,5 +1,6 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { HiCube, HiChartBar, HiLightningBolt } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function Process({ isDarkMode }) {
     const { t, language } = useLanguage();
@@ -25,6 +26,17 @@ export default function Process({ isDarkMode }) {
             "Analytics & Tracking Setup",
             "Google Ads Setup & Optimization"
         ]
+    };
+
+    const serviceSlugs = {
+        "Shopify Store Development": "shopify-store-development",
+        "Shopify Store Audit": "shopify-store-audit",
+        "CRO Optimization": "cro-optimization",
+        "Conversion Audit & Strategy": "conversion-audit-strategy",
+        "Speed Optimization": "speed-optimization",
+        "Email Marketing Setup": "email-marketing-setup",
+        "Analytics & Tracking Setup": "analytics-tracking-setup",
+        "Google Ads Setup & Optimization": "google-ads-setup-optimization"
     };
 
     return (
@@ -80,8 +92,9 @@ export default function Process({ isDarkMode }) {
                                     </div>
                                     <div className="flex flex-wrap gap-2">
                                         {stepServices[index].map((service, serviceIndex) => (
-                                            <span
+                                            <Link
                                                 key={serviceIndex}
+                                                to={`/services/${serviceSlugs[service]}`}
                                                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
                                                     isDarkMode
                                                         ? "bg-green-700/10 text-green-700/80 border border-green-700/20 hover:bg-green-700/20 hover:text-green-700"
@@ -89,7 +102,7 @@ export default function Process({ isDarkMode }) {
                                                 }`}
                                             >
                                                 {service}
-                                            </span>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
