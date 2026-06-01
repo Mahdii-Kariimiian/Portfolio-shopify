@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { services } from "../db/db";
-import { FaArrowLeft, FaCheck, FaPlus, FaClock } from "react-icons/fa";
+import { FaArrowLeft, FaCheck, FaPlus, FaClock, FaStar } from "react-icons/fa";
+import { HiArrowRight } from "react-icons/hi";
 
 const ServiceDetail = ({ isDarkMode }) => {
     const { slug } = useParams();
@@ -25,11 +26,11 @@ const ServiceDetail = ({ isDarkMode }) => {
     }
 
     return (
-        <div className={`min-h-screen ${isDarkMode ? "bg-darkerGreen text-white" : "bg-white text-gray-800"}`}>
+        <div className={`min-h-screen ${isDarkMode ? "bg-darker-bg text-dark-text-primary" : "bg-light-bg text-gray-900"}`}>
             {/* Hero Section */}
-            <section className="py-16 px-4 sm:px-6 lg:px-8">
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-[600px] mx-auto text-center">
-                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-black mb-4 ${
+                    <h1 className={`text-3xl sm:text-5xl lg:text-4xl font-bold mb-6 leading-tight ${
                         isDarkMode ? "text-white" : "text-gray-900"
                     }`}>
                         {service.hero.title}
@@ -40,29 +41,6 @@ const ServiceDetail = ({ isDarkMode }) => {
                     }`}>
                         {service.hero.subtitle}
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                        <a
-                            href="/order"
-                            className={`px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                                isDarkMode
-                                    ? "bg-green-700 text-white"
-                                    : "bg-green-700 text-white"
-                            }`}
-                        >
-                            {service.hero.ctaPrimary}
-                        </a>
-                        {service.hero.ctaSecondary && (
-                            <a
-                                href="/order"
-                                className={`px-10 py-5 text-lg font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                                    isDarkMode ? "bg-white text-gray-900" : "bg-gray-900 text-white"
-                                }`}
-                            >
-                                {service.hero.ctaSecondary}
-                            </a>
-                        )}
-                    </div>
 
                     {/* Trust Benefits */}
                     <div className="border-t border-gray-200 pt-6">
@@ -85,7 +63,7 @@ const ServiceDetail = ({ isDarkMode }) => {
             </section>
 
             {/* Ideal For Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className={`relative p-8 rounded-3xl overflow-hidden ${
                         isDarkMode 
@@ -107,7 +85,7 @@ const ServiceDetail = ({ isDarkMode }) => {
                                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                                     Perfect Match For
                                 </div>
-                                <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
+                                <h2 className={`text-2xl sm:text-3xl font-bold mb-4 ${
                                     isDarkMode ? "text-white" : "text-gray-900"
                                 }`}>
                                     Who This Service Is Ideal For
@@ -152,143 +130,269 @@ const ServiceDetail = ({ isDarkMode }) => {
                 </div>
             </section>
 
-            {/* Problems Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
+            {/* Problems and Solutions Section */}
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className={`text-3xl sm:text-4xl font-bold mb-12 text-center ${
-                        isDarkMode ? "text-white" : "text-gray-900"
-                    }`}>
-                        Problems I Solve
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {service.problem.map((item, index) => {
-                            const hasHighlightKeywords = item.toLowerCase().includes('conversion') || 
-                                                         item.toLowerCase().includes('performance') || 
-                                                         item.toLowerCase().includes('speed') || 
-                                                         item.toLowerCase().includes('tracking');
+                    {/* Mobile Layout - Stacked */}
+                    <div className="lg:hidden space-y-12">
+                        {/* Problems Section */}
+                        <div>
+                            <h2 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${
+                                isDarkMode ? "text-white" : "text-gray-900"
+                            }`}>
+                                Problems I Solve
+                            </h2>
                             
-                            return (
-                                <div key={index} className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
-                                    isDarkMode 
-                                        ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
-                                        : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
-                                }`}>
-                                    <div className="flex items-center space-x-4">
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                            hasHighlightKeywords
-                                                ? isDarkMode 
+                            <div className="space-y-6">
+                                {service.problem.map((item, index) => {
+                                    const hasHighlightKeywords = item.toLowerCase().includes('conversion') || 
+                                                                item.toLowerCase().includes('performance') || 
+                                                                item.toLowerCase().includes('speed') || 
+                                                                item.toLowerCase().includes('tracking');
+                                    
+                                    return (
+                                        <div key={index} className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+                                            isDarkMode 
+                                                ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
+                                                : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
+                                        }`}>
+                                            <div className="flex items-center space-x-4">
+                                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                                    hasHighlightKeywords
+                                                        ? isDarkMode 
+                                                            ? "bg-green-700/20 border border-green-700/30" 
+                                                            : "bg-green-600/20 border border-green-600/30"
+                                                        : isDarkMode 
+                                                            ? "bg-gray-700/30 border border-gray-600/30" 
+                                                            : "bg-gray-100/80 border border-gray-300/50"
+                                                }`}>
+                                                    <FaStar className={`w-5 h-5 ${
+                                                        hasHighlightKeywords
+                                                            ? "text-green-600"
+                                                            : isDarkMode ? "text-gray-400" : "text-gray-600"
+                                                    }`} />
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className={`text-lg leading-relaxed ${
+                                                        isDarkMode ? "text-gray-200" : "text-gray-800"
+                                                    }`}>
+                                                        {item.split(' ').map((word, wordIndex) => {
+                                                            const lowerWord = word.toLowerCase();
+                                                            const isHighlight = lowerWord.includes('conversion') || 
+                                                                              lowerWord.includes('performance') || 
+                                                                              lowerWord.includes('speed') || 
+                                                                              lowerWord.includes('tracking');
+                                                
+                                                            return (
+                                                                <span key={wordIndex}>
+                                                                    {isHighlight ? (
+                                                                        <span className={`font-bold ${
+                                                                            isDarkMode ? "text-green-400" : "text-green-600"
+                                                                        }`}>
+                                                                            {word}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="font-medium">{word}</span>
+                                                                    )}
+                                                                    {' '}
+                                                                </span>
+                                                            );
+                                                        })}
+                                                    </p>
+                                                    
+                                                    {hasHighlightKeywords && (
+                                                        <div className={`mt-3 inline-flex items-center space-x-1 text-xs font-medium px-3 py-1 rounded-full ${
+                                                            isDarkMode 
+                                                                ? "bg-green-700/20 text-green-400 border border-green-700/30" 
+                                                                : "bg-green-600/20 text-green-600 border border-green-600/30"
+                                                        }`}>
+                                                            <span>Priority Issue</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Solutions Section */}
+                        <div>
+                            <h2 className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${
+                                isDarkMode ? "text-white" : "text-gray-900"
+                            }`}>
+                                My Solutions
+                            </h2>
+                            
+                            <div className="space-y-6">
+                                {service.solution.map((item, index) => (
+                                    <div key={index} className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+                                        isDarkMode 
+                                            ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
+                                            : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
+                                    }`}>
+                                        <div className="flex items-center space-x-4">
+                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                                isDarkMode 
                                                     ? "bg-green-700/20 border border-green-700/30" 
                                                     : "bg-green-600/20 border border-green-600/30"
-                                                : isDarkMode 
-                                                    ? "bg-gray-700/30 border border-gray-600/30" 
-                                                    : "bg-gray-100/80 border border-gray-300/50"
-                                        }`}>
-                                            <span className={`text-xl font-bold ${
-                                                hasHighlightKeywords
-                                                    ? "text-green-600"
-                                                    : isDarkMode ? "text-gray-400" : "text-gray-600"
                                             }`}>
-                                                {String(index + 1).padStart(2, '0')}
-                                            </span>
-                                        </div>
-                                        <div className="flex-1">
-                                            <p className={`text-lg leading-relaxed ${
-                                                isDarkMode ? "text-gray-200" : "text-gray-800"
-                                            }`}>
-                                                {item.split(' ').map((word, wordIndex) => {
-                                                    const lowerWord = word.toLowerCase();
-                                                    const isHighlight = lowerWord.includes('conversion') || 
-                                                                      lowerWord.includes('performance') || 
-                                                                      lowerWord.includes('speed') || 
-                                                                      lowerWord.includes('tracking');
-                                                    
-                                                    return (
-                                                        <span key={wordIndex}>
-                                                            {isHighlight ? (
-                                                                <span className={`font-bold ${
-                                                                    isDarkMode ? "text-green-400" : "text-green-600"
-                                                                }`}>
-                                                                    {word}
-                                                                </span>
-                                                            ) : (
-                                                                <span className="font-medium">{word}</span>
-                                                            )}
-                                                            {' '}
-                                                        </span>
-                                                    );
-                                                })}
-                                            </p>
-                                            
-                                            {hasHighlightKeywords && (
-                                                <div className={`mt-3 inline-flex items-center space-x-1 text-xs font-medium px-3 py-1 rounded-full ${
-                                                    isDarkMode 
-                                                        ? "bg-green-700/20 text-green-400 border border-green-700/30" 
-                                                        : "bg-green-600/20 text-green-600 border border-green-600/30"
+                                                <FaStar className={`w-5 h-5 ${
+                                                    isDarkMode ? "text-green-600" : "text-green-600"
+                                                }`} />
+                                            </div>
+                                            <div className="flex-1">
+                                                <h3 className={`text-lg font-bold mb-3 ${
+                                                    isDarkMode ? "text-white" : "text-gray-900"
                                                 }`}>
-                                                    <span>Priority Issue</span>
-                                                </div>
-                                            )}
+                                                    {item}
+                                                </h3>
+                                                <p className={`text-sm leading-relaxed ${
+                                                    isDarkMode ? "text-gray-400" : "text-gray-600"
+                                                }`}>
+                                                    Strategic implementation with measurable results
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Solutions Section - More Structured */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className={`text-3xl sm:text-4xl font-bold mb-12 text-center ${
-                        isDarkMode ? "text-white" : "text-gray-900"
-                    }`}>
-                        My Solutions
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {service.solution.map((item, index) => (
-                            <div key={index} className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
-                                isDarkMode 
-                                    ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
-                                    : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
-                            }`}>
-                                <div className="flex items-center space-x-4">
-                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                                        isDarkMode 
-                                            ? "bg-green-700/20 border border-green-700/30" 
-                                            : "bg-green-600/20 border border-green-600/30"
-                                    }`}>
-                                        <span className={`text-xl font-bold ${
-                                            isDarkMode ? "text-green-600" : "text-green-600"
-                                        }`}>
-                                            {String(index + 1).padStart(2, '0')}
-                                        </span>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className={`text-lg font-bold mb-3 ${
-                                            isDarkMode ? "text-white" : "text-gray-900"
-                                        }`}>
-                                            {item}
-                                        </h3>
-                                        <p className={`text-sm leading-relaxed ${
-                                            isDarkMode ? "text-gray-400" : "text-gray-600"
-                                        }`}>
-                                            Strategic implementation with measurable results
-                                        </p>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+                    </div>
+
+                    {/* Desktop Layout - Side by Side */}
+                    <div className="hidden lg:block">
+                        <div className="grid grid-cols-2 gap-12 mb-12">
+                            <h2 className={`text-2xl sm:text-3xl font-bold text-center ${
+                                isDarkMode ? "text-white" : "text-gray-900"
+                            }`}>
+                                Problems I Solve
+                            </h2>
+                            <h2 className={`text-2xl sm:text-3xl font-bold text-center ${
+                                isDarkMode ? "text-white" : "text-gray-900"
+                            }`}>
+                                My Solutions
+                            </h2>
+                        </div>
+                        
+                        <div className="space-y-6">
+                            {service.problem.map((item, index) => {
+                                const hasHighlightKeywords = item.toLowerCase().includes('conversion') || 
+                                                            item.toLowerCase().includes('performance') || 
+                                                            item.toLowerCase().includes('speed') || 
+                                                            item.toLowerCase().includes('tracking');
+                                const solutionItem = service.solution[index];
+                                
+                                return (
+                                    <div key={index} className="grid grid-cols-2 gap-6">
+                                        {/* Problem Card */}
+                                        <div className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+                                            isDarkMode 
+                                                ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
+                                                : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
+                                        }`}>
+                                            <div className="flex items-center space-x-4">
+                                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                                    hasHighlightKeywords
+                                                        ? isDarkMode 
+                                                            ? "bg-green-700/20 border border-green-700/30" 
+                                                            : "bg-green-600/20 border border-green-600/30"
+                                                        : isDarkMode 
+                                                            ? "bg-gray-700/30 border border-gray-600/30" 
+                                                            : "bg-gray-100/80 border border-gray-300/50"
+                                                }`}>
+                                                    <FaStar className={`w-5 h-5 ${
+                                                        hasHighlightKeywords
+                                                            ? "text-green-600"
+                                                            : isDarkMode ? "text-gray-400" : "text-gray-600"
+                                                    }`} />
+                                                </div>
+                                                <div className="flex-1">
+                                                    <p className={`text-lg leading-relaxed ${
+                                                        isDarkMode ? "text-gray-200" : "text-gray-800"
+                                                    }`}>
+                                                        {item.split(' ').map((word, wordIndex) => {
+                                                            const lowerWord = word.toLowerCase();
+                                                            const isHighlight = lowerWord.includes('conversion') || 
+                                                                              lowerWord.includes('performance') || 
+                                                                              lowerWord.includes('speed') || 
+                                                                              lowerWord.includes('tracking');
+                                                        
+                                                            return (
+                                                                <span key={wordIndex}>
+                                                                    {isHighlight ? (
+                                                                        <span className={`font-bold ${
+                                                                            isDarkMode ? "text-green-400" : "text-green-600"
+                                                                        }`}>
+                                                                            {word}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="font-medium">{word}</span>
+                                                                    )}
+                                                                    {' '}
+                                                                </span>
+                                                            );
+                                                        })}
+                                                    </p>
+                                                    
+                                                    {hasHighlightKeywords && (
+                                                        <div className={`mt-3 inline-flex items-center space-x-1 text-xs font-medium px-3 py-1 rounded-full ${
+                                                            isDarkMode 
+                                                                ? "bg-green-700/20 text-green-400 border border-green-700/30" 
+                                                                : "bg-green-600/20 text-green-600 border border-green-600/30"
+                                                        }`}>
+                                                            <span>Priority Issue</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Solution Card */}
+                                        {solutionItem && (
+                                            <div className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
+                                                isDarkMode 
+                                                    ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50" 
+                                                    : "bg-white/60 border-gray-200/60 hover:border-green-600/50"
+                                            }`}>
+                                                <div className="flex items-center space-x-4">
+                                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                                                        isDarkMode 
+                                                            ? "bg-green-700/20 border border-green-700/30" 
+                                                            : "bg-green-600/20 border border-green-600/30"
+                                                    }`}>
+                                                        <FaStar className={`w-5 h-5 ${
+                                                            isDarkMode ? "text-green-600" : "text-green-600"
+                                                        }`} />
+                                                    </div>
+                                                    <div className="flex-1">
+                                                        <h3 className={`text-lg font-bold mb-3 ${
+                                                            isDarkMode ? "text-white" : "text-gray-900"
+                                                        }`}>
+                                                            {solutionItem}
+                                                        </h3>
+                                                        <p className={`text-sm leading-relaxed ${
+                                                            isDarkMode ? "text-gray-400" : "text-gray-600"
+                                                        }`}>
+                                                            Strategic implementation with measurable results
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* What's Included Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className={`text-3xl sm:text-4xl font-bold mb-12 text-center ${
+                    <h2 className={`text-2xl sm:text-3xl font-bold mb-12 text-center ${
                         isDarkMode ? "text-white" : "text-gray-900"
                     }`}>
                         What's Included
@@ -304,11 +408,11 @@ const ServiceDetail = ({ isDarkMode }) => {
                                 <div className="flex items-center space-x-4">
                                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                         isDarkMode 
-                                            ? "bg-blue-700/20 border border-blue-700/30" 
-                                            : "bg-blue-600/20 border border-blue-600/30"
+                                            ? "bg-green-700/20 border border-green-700/30" 
+                                            : "bg-green-600/20 border border-green-600/30"
                                     }`}>
                                         <FaPlus className={`w-5 h-5 ${
-                                            isDarkMode ? "text-blue-400" : "text-blue-600"
+                                            isDarkMode ? "text-green-400" : "text-green-600"
                                         }`} />
                                     </div>
                                     <div className="flex-1">
@@ -331,8 +435,8 @@ const ServiceDetail = ({ isDarkMode }) => {
             </section>
 
             {/* Process Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto" style={{maxWidth: '600px'}}>
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto" style={{maxWidth: '900px'}}>
                     <div className={`relative p-8 rounded-3xl overflow-hidden ${
                         isDarkMode 
                             ? "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/30" 
@@ -347,13 +451,13 @@ const ServiceDetail = ({ isDarkMode }) => {
                             <div className="text-center mb-12">
                                 <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full text-sm font-semibold mb-4 ${
                                     isDarkMode 
-                                        ? "bg-blue-700/20 text-blue-400 border border-blue-700/30" 
-                                        : "bg-blue-600/20 text-blue-700 border border-blue-600/30"
+                                        ? "bg-green-700/20 text-green-400 border border-green-700/30" 
+                                        : "bg-green-600/20 text-green-700 border border-green-600/30"
                                 }`}>
-                                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                                     Step-by-Step
                                 </div>
-                                <h2 className={`text-3xl sm:text-4xl font-bold mb-4 text-center ${
+                                <h2 className={`text-2xl sm:text-3xl font-bold mb-4 text-center ${
                                     isDarkMode ? "text-white" : "text-gray-900"
                                 }`}>
                                    My Process
@@ -365,21 +469,21 @@ const ServiceDetail = ({ isDarkMode }) => {
                                 </p>
                             </div>
                             
-                            <div className="mx-auto" style={{maxWidth: '600px'}}>
+                            <div className="max-w-4xl mx-auto">
                                 {service.process.map((item, index) => (
                                     <div key={index} className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mb-6 ${
                                         isDarkMode 
-                                            ? "bg-gray-800/40 border-gray-700/50 hover:border-blue-700/50 hover:bg-gray-800/60" 
-                                            : "bg-white/60 border-gray-200/60 hover:border-blue-600/50 hover:bg-white/80"
+                                            ? "bg-gray-800/40 border-gray-700/50 hover:border-green-700/50 hover:bg-gray-800/60" 
+                                            : "bg-white/60 border-gray-200/60 hover:border-green-600/50 hover:bg-white/80"
                                     }`}>
                                         <div className="flex items-center space-x-6">
                                             <div className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                                                 isDarkMode 
-                                                    ? "bg-blue-700/20 border border-blue-700/30" 
-                                                    : "bg-blue-600/20 border border-blue-600/30"
+                                                    ? "bg-green-700/20 border border-green-700/30" 
+                                                    : "bg-green-600/20 border border-green-600/30"
                                             }`}>
                                                 <span className={`text-2xl font-bold ${
-                                                    isDarkMode ? "text-blue-400" : "text-blue-600"
+                                                    isDarkMode ? "text-green-400" : "text-green-600"
                                                 }`}>
                                                     {String(index + 1).padStart(2, '0')}
                                                 </span>
@@ -405,65 +509,48 @@ const ServiceDetail = ({ isDarkMode }) => {
                 </div>
             </section>
 
-            {/* FAQ Section - Accordion Style */}
-            {service.faq && (
-                <section className="py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className={`text-3xl sm:text-4xl font-bold mb-12 text-center ${
+            {/* Positioning Statement - CTA Card */}
+            <section className="py-10 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-4xl mx-auto text-center">
+                    <div className={`p-7 rounded-3xl ${
+                        isDarkMode 
+                            ? "bg-gradient-to-br from-green-800/30 via-emerald-700/20 to-green-900/40 border border-green-600/30 shadow-2xl backdrop-blur-sm" 
+                            : "bg-gradient-to-br from-green-200/90 via-emerald-100/95 to-lime-200/90 border border-green-400/50 shadow-2xl backdrop-blur-sm"
+                    }`}>
+                        <h2 className={`text-3xl font-bold mb-4 ${
                             isDarkMode ? "text-white" : "text-gray-900"
                         }`}>
-                            Frequently Asked Questions
-                        </h2>
-                        
-                        <div className="space-y-4 max-w-3xl">
-                            {service.faq.map((faq, index) => (
-                                <details key={index} className={`group border rounded-xl ${
-                                    isDarkMode ? "border-gray-700/30 bg-gray-800/20" : "border-gray-200/50 bg-white/50"
-                                }`}>
-                                    <summary className={`flex items-center justify-between p-6 cursor-pointer list-none ${
-                                        isDarkMode ? "hover:bg-gray-700/30" : "hover:bg-gray-100"
-                                    }`}>
-                                        <h3 className={`text-lg font-semibold ${
-                                            isDarkMode ? "text-white" : "text-gray-900"
-                                        }`}>
-                                            {faq.q}
-                                        </h3>
-                                        <span className={`ml-2 transform transition-transform group-open:rotate-90`}>
-                                            ▼
-                                        </span>
-                                    </summary>
-                                    <div className={`p-6 pt-0 ${
-                                        isDarkMode ? "text-gray-300" : "text-gray-600"
-                                    }`}>
-                                        <p className="text-base leading-relaxed">{faq.a}</p>
-                                    </div>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Positioning Statement - Green Strip */}
-            <section className="py-24 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className={`p-12 rounded-2xl ${
-                        isDarkMode 
-                            ? "bg-green-900 border border-green-700/30" 
-                            : "bg-green-700 border-green-600/30"
-                    }`}>
-                        <h2 className={`text-3xl font-bold mb-4 text-white text-center`}>
                             {service.positioning}
                         </h2>
-                        <p className="text-lg text-white mb-6">
+                        
+                        <p className={`text-lg mb-6 ${
+                            isDarkMode ? "text-gray-300" : "text-gray-600"
+                        }`}>
                             Strategic approach with measurable impact
                         </p>
-                        <a
-                            href="/order"
-                            className={`inline-block px-12 py-5 text-lg font-bold rounded-full bg-white text-green-700 hover:bg-gray-100 hover:scale-105 transition-all duration-300`}
-                        >
-                            {service.finalCTA.button}
-                        </a>
+
+                        <div className={`mt-10 flex flex-col sm:flex-row gap-0 w-full rounded-[16px] overflow-hidden shadow-lg border ${
+                            isDarkMode 
+                                ? "border-dark-border/50" 
+                                : "border-gray-200/50"
+                        }`}>
+                            <input
+                                type="text"
+                                placeholder="Enter your store URL"
+                                className={`flex-1 px-6 py-4 border-0 focus:outline-none focus:ring-0 ${
+                                    isDarkMode
+                                        ? "bg-dark-surface/80 text-dark-text-primary placeholder-dark-text-tertiary" 
+                                        : "bg-white text-gray-900 placeholder-gray-500"
+                                }`}
+                            />
+                            <a
+                                href="/order"
+                                className={`inline-flex items-center justify-center space-x-2 px-8 py-4 text-lg font-semibold transition-all duration-200 transform hover:scale-105 bg-green-700 hover:bg-green-600 text-white min-w-[180px]`}
+                            >
+                                <span>{service.finalCTA.button}</span>
+                                <HiArrowRight className="w-4 h-4" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

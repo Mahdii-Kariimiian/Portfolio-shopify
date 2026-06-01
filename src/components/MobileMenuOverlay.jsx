@@ -7,6 +7,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 const MobileMenuOverlay = ({ isOpen, onClose, isDarkMode, setIsDarkMode }) => {
   const { language, changeLanguage, t } = useLanguage();
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -29,10 +30,6 @@ const MobileMenuOverlay = ({ isOpen, onClose, isDarkMode, setIsDarkMode }) => {
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-  };
-
-  const toggleLanguageDropdown = () => {
-    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
   };
 
   const selectLanguage = (langCode) => {
@@ -81,7 +78,10 @@ const MobileMenuOverlay = ({ isOpen, onClose, isDarkMode, setIsDarkMode }) => {
             {/* Language Dropdown */}
             <div className="relative">
               <button
-                onClick={toggleLanguageDropdown}
+                onClick={() => {
+                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+                  setIsServicesDropdownOpen(false);
+                }}
                 className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-colors duration-200 ${
                   isDarkMode 
                     ? "bg-gray-800/80 text-white hover:bg-gray-700/80" 
@@ -147,7 +147,10 @@ const MobileMenuOverlay = ({ isOpen, onClose, isDarkMode, setIsDarkMode }) => {
             {/* Plans Dropdown for Mobile */}
             <div className="relative">
               <button
-                onClick={() => setIsLanguageDropdownOpen(false)} // Close language dropdown if open
+                onClick={() => {
+                  setIsLanguageDropdownOpen(false);
+                  setIsServicesDropdownOpen(false);
+                }}
                 className="flex items-center space-x-2 text-xl font-medium hover:text-green-700 transition-colors duration-200"
               >
                 {t('header.plans')}

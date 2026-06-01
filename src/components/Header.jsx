@@ -55,28 +55,122 @@ const Header = ({ isDarkMode, setIsDarkMode, isMenuOpen, setIsMenuOpen }) => {
                 <nav className="flex items-center space-x-8 ml-8">
                     <Link
                         to="/about"
-                        className="text-sm font-medium relative group transition-all duration-300"
+                        className="text-sm font-medium relative group transition-all duration-300 hover:text-green-700"
                     >
                         {t('header.about')}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link
                         to="/projects"
-                        className="text-sm font-medium relative group transition-all duration-300"
+                        className="text-sm font-medium relative group transition-all duration-300 hover:text-green-700"
                     >
                         {t('header.projects')}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
+                    {/* Services Dropdown */}
+                    <div className="relative group">
+                        <button className={`text-sm font-medium relative group transition-all duration-300 flex items-center space-x-1 hover:text-green-700 ${
+                            isDarkMode ? "text-dark-text-primary" : "text-black"
+                        }`}>
+                            Services
+                            <svg className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        
+                        {/* Dropdown Menu */}
+                        <div className={`absolute top-full left-0 mt-3 w-56 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-xl ${
+                            isDarkMode ? "bg-dark-surface border-dark-border" : "bg-white/95 border border-gray-200"
+                        }`}>
+                            <Link
+                                to="/services/conversion-audit-strategy"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Conversion Audit & Strategy
+                            </Link>
+                            <Link
+                                to="/services/analytics-tracking-setup"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Analytics & Tracking Setup
+                            </Link>
+                            <Link
+                                to="/services/google-ads-setup-optimization"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Google Ads Setup & Optimization
+                            </Link>
+                            <Link
+                                to="/services/shopify-store-development"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Shopify Store Development
+                            </Link>
+                            <Link
+                                to="/services/cro-optimization"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                CRO Optimization
+                            </Link>
+                            <Link
+                                to="/services/speed-optimization"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Speed Optimization
+                            </Link>
+                            <Link
+                                to="/services/email-marketing"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Email Marketing
+                            </Link>
+                            <Link
+                                to="/services/shopify-store-audit"
+                                className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 rounded-b-xl ${
+                                    isDarkMode 
+                                        ? "text-dark-text-secondary hover:bg-dark-surface-hover hover:text-dark-text-primary"
+                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                }`}
+                            >
+                                Shopify Store Audit
+                            </Link>
+                        </div>
+                    </div>
                     {/* Plans Dropdown */}
                     <div className="relative group">
-                        <button className={`text-sm font-medium relative group transition-all duration-300 flex items-center space-x-1 ${
+                        <button className={`text-sm font-medium relative group transition-all duration-300 flex items-center space-x-1 hover:text-green-700 ${
                             isDarkMode ? "text-dark-text-primary" : "text-black"
                         }`}>
                             {t('header.plans')}
                             <svg className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                         </button>
                         
                         {/* Dropdown Menu */}
@@ -117,10 +211,9 @@ const Header = ({ isDarkMode, setIsDarkMode, isMenuOpen, setIsMenuOpen }) => {
                     </div>
                     <Link
                         to="/contact"
-                        className="text-sm font-medium relative group transition-all duration-300"
+                        className="text-sm font-medium relative group transition-all duration-300 hover:text-green-700"
                     >
                         {t('header.contact')}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-700 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                 </nav>
 
